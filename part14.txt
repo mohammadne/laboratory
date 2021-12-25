@@ -1,0 +1,2 @@
+find command is very powerful in unix
+

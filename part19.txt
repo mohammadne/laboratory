@@ -1,0 +1,10 @@
+kill the process
+
+quit => unix will decide and gives you prompt that it's better to kill it or not
+force quit => kill!!!
+
+kill 1211 : quit process-id 1211
+get the PID by : ps aux
+
+kill : quit
+kill -9 : force quit

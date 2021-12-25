@@ -1,0 +1,8 @@
+reading files
+
+cat (ConcATinate) :
+cat file.txt
+
+some commands like more, less and man, are specisal for their pagination,
+means they will use more and less ability for their pagination
+it's not scrollable and you can backward and forward it. 

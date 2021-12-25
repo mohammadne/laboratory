@@ -1,0 +1,14 @@
+copy files and directories
+
+cp (copy) command :
+cp file.txt new_file.txt
+
+popular options : -n -i -v -f
+these are similar to mv options
+
+default option is -f
+you can change the default option in aliases
+
+copy directories :
+you should add -R option
+it will indicates recursively copy everything

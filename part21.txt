@@ -1,0 +1,13 @@
+math operators
+
+cal : shows the calender
+cal 12 2021 : will show the 2020 december month
+cal -y 2009 : will shows the given year calender
+
+ncal : the days are vertical
+
+bc : engineering calculator
+
+expr : calculate given expression
+
+units : unit conversions like meter to foot and ...

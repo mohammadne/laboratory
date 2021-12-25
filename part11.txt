@@ -1,0 +1,11 @@
+remove files and directories
+
+un unix, you can't recover a removed item
+it has been removed, there is no trash
+
+rm (remove): rm file.txt
+for directories, use it with R option
+
+you can use rmdir only for removing empty directories
+
+rm -rf dir : dangerous option, force and remove recursively

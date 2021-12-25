@@ -1,0 +1,16 @@
+system information
+
+date : the date
+uptime : how much you use the system
+uname (unix name) : name of OS
+
+who : gives you the users
+
+hostname : PC name
+
+df : mounted disks information
+du -ha : show all the decendents tree with their size
+du -ha some_dir : show all the decendents tree with their size
+du -ahd2 : look until depth one
+
+-h => indicated humanized

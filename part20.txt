@@ -1,0 +1,12 @@
+text operators
+
+cat file.txt : reads a file
+
+wc file.txt : gives us lines, words, characters
+
+sort file.txt will sort the lines based on first line alphabet
+the default will seperate lower and upper cases, to ban it, type with f option
+sort -rf file.txt : reverse the sort
+u option : will sort uniquely 
+
+uniq will return the unigued lines (if they are continues)

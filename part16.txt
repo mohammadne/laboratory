@@ -1,0 +1,3 @@
+modify pathes
+
+modify .zshrc and define a file for your aliases

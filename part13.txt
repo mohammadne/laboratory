@@ -1,0 +1,7 @@
+symbolic link:
+
+path pointer to the original file
+
+it will not track the original file for existance, 
+
+ln -s file.txt symlink

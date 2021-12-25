@@ -1,0 +1,27 @@
+chmod(change mode)
+
+when you type ls -lahG, you will get a list that will be start with:
+drwxr-xr-x : a directory
+-rw-r--r--@ : a file
+lrwxr-xr-x : a link
+
+so they will be start with d, l or -
+
+the users are categorized into 3 groups
+to decode name that will be start in ls -lahG, we should spell it 3 alphabet, 3 alphabet
+read, write, execute (r, w, x) for 3 groups (user, groups, others)
+
+file.txt : -rw-r--r--@ 
+chmod ug=rwx,o=rw file.txt
+file.txt : -rwxrwxrw-@
+
+chmod go+w file.txt
+add write permission to groups and others
+
+chmod o-w file.txt
+remove write access from others
+
+chmod ugo+rwx file.txt
+chmod a+rwx file.txt
+a stands for all
+

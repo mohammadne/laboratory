@@ -1,0 +1,9 @@
+directory(folder) creation
+
+mkdir(make directory)
+
+mkdir dir1
+
+mkdir -p dir1/dir2/dir3
+-p option : will see if in the given path, directories exists or not
+and create the missings, here will crete both dir2 and dir3

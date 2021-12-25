@@ -1,0 +1,29 @@
+file-systems:
+
+~ : your usename folder
+
+pwd(present working directory): shows you where you are
+
+ls(list): which files there are on the directory
+ls -l : vertical list of directories
+ls -la : list the directories includes hidden items
+
+ls -l will output the directories in vertical manner which would be start with:
+drwx...... => indicates directory
+-r....... => indicates file
+
+. : current directory
+.. : rpevious directory
+.DS_Store : size and posiioning of different graphical windows
+.Trash : your trash bin
+
+rc files like .bashrc or .gemrc are configuration files 
+shells normally have rc or profile files 
+
+~ : tilledA
+/ : HOME page => sensiitive
+
+cd: change directory
+cd - => go to previous directory
+
+if cd starts with / , means that it should perform that action from the root directory

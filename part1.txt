@@ -1,0 +1,53 @@
+Part1:
+
+amirhassan azimi, pars-click
+
+
+unix: an operating system
+first developes by AT&T from 1969-1971
+C programming-language, was developed for Uniux-OS
+
+it has improvement till present,
+Branches:
+openSource: Linux(by berkly software distribution BSD) => you can change the codes
+closeSource: Solaries(Oracle), AIX(IBM)
+MixedSource: MacOS(Apple) => you can change the openSource part codes, not apple developed codes
+Mobiles: Android, IPhone, IPad
+
+you can't use the unix purely, the distributions are all unix-like system
+
+MacOS X or Darwin : BSD Unix + NeXTSTEP(the company stiveJobs worked at) + Apple code
+
+command-structure:
+command + options + arguments
+
+echo -n 'Hello World' => options are optional 
+
+ls -l -a  -h  Desktop => لیست بکن داخل لیست کلمات مخفی رو و رنگی بکن دسکتاپ رو
+or : la -lah Desktop => combine multiple options 
+
+banner -w 50 'Hello World' => 50 is an argument for the option
+or: banner -w50 'Hello World' => option's argument can be stick to the option itself for more readability
+example: mysql -uroot : username root(-u root (stick together))
+
+cat -n file1.txt file2.txt => multiple arguments
+فایل رو بخون توی یه خط اول فایل اول و با فاصله فایل دوم رو 
+
+Kernel: the core of an OS
+it will allocate times and memory to the programms
+MacOS-X uses Mach kernel
+
+Shell: outer layer of OS
+intracts with users, users intract via kernel via shells
+it will sends requests to the kernel
+MacOS-X uses the bash shell, but it has other alternatives
+
+popular Shells:
+sh (Bourne Shell 1977)
+csh (C shell 1979)
+tcsh(tabbed c shell 1979)
+ksh(korn shell 1982)
+bash (bourne again shell 1987)
+zsh (Z shell 1990)
+
+shell prompts are different from each others(starting text)

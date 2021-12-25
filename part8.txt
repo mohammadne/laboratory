@@ -1,0 +1,20 @@
+moving and modyfiyng files and directories name
+mv command
+
+mv file.txt newdir/newfile.txt
+command above will cut file.txt and paste it into newfile.txt inside newdir directory
+mv file.txt newdir : it will use the original file name for file movement
+
+renaming :
+there is another command named rename but it's unreliable, don't use it.
+use the mv command instead :
+mv file.txt new_file.txt
+mv dir new_dir
+
+some options :
+-f : force overwrite on other files
+-n : ban overwrite
+-i : asks for overwrite
+-v : gives you hint about the action  
+
+

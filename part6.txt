@@ -1,0 +1,4 @@
+read part of a file
+
+head command : read firsts file lines
+tail command : read last file lines

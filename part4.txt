@@ -1,0 +1,20 @@
+file creation in Unix
+
+file names sould less than 255 characters
+avoid using symbols
+don't start the names with (-)
+don't use white-space in names (if there is, in cd, use back-slash(\))
+
+man touch : change file access and modification times
+touch will change date modified if file exsist otherwise, it will create it
+
+echo : by default, will output the text onto standard-output(command-line)
+echo 'Salam' > file.txt
+
+Unix has some text-editors in itself:
+1- ed(edit text
+2- vi(visual mode)
+3- vim(vi improved)
+4- mvim(mac vim)
+5- nano (traditional pico)
+6- emacs

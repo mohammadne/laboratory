@@ -1,0 +1,5 @@
+hardlinks in unix
+
+ln file.txt linked_file.txt
+
+both file and linked file will point to the same location on the drive

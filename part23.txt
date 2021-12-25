@@ -1,0 +1,17 @@
+ownership
+
+whoami : a command to give you your username
+echo $HOME : your user directory
+
+in linux, the user directories are reside inside of home
+but in darwin, it leaves at Users
+
+groups command : which users there are on the computer 
+
+chown : change user group
+chown mohammad:sudo password.txt
+chown :sudo password.txt
+
+so there is a user and a groups like root, admin
+the admin user has the ability to use sudo command
+groups like guest and etc, doesn't have sudo ability

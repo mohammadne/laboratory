@@ -1,0 +1,14 @@
+commands are programms that has communication with hardware like echo
+they are simply files
+but where are these files and how we could run these programms ?
+
+for example the echo file is in : /bin/echo
+you can write /bin/echo 'Hello'
+
+answer:
+if you run echo $PATH
+you can see a long list of pathes(seperated with :) which it should hold /bin
+
+whereis command: locates  the binary, source and manual files for the specified command names.
+whichis: pathnames of the files (or links)
+whatis:

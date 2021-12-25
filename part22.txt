@@ -1,0 +1,14 @@
+2 important commands :
+!!
+!$
+
+sudo : substitude user do
+temporarily change the user till 5 minutes
+
+.zsh_history => will holds all the searched commands
+
+nano file.txt
+cat !$ => cat file.txt
+!$ : last command arguments
+
+!! : whole last command

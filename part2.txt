@@ -1,0 +1,12 @@
+man command: manual page
+format and display the on-line manual page
+
+man options:
+-k: show only the name of the command
+b and f for backward,forward between pages
+
+man -k == apropos
+
+whatis vs man -k (or apropos):
+whatis command will search exactly the searched name
+but man -k will give you more search result

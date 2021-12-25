@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  # it will be a reverse-proxy and stands 
+  # in-front of another apache web-server
+  proxy:
+    image: nginx:latest
+    ports:
+      # expose 80 on host and sent to 80 in container
+      - '80:80' 
+    volumes:
+      # ro means read-only and container can't change it  
+      - ./6.nginx.conf:/etc/nginx/conf.d/default.conf:ro
+  web:
+    # this will use httpd:latest
+    image: httpd  

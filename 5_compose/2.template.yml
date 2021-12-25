@@ -1,0 +1,17 @@
+version: '3.1'  # if no version is specified then v1 is assumed. Recommend v2 minimum
+
+# containers. same as docker run, we named it service because in real-world
+# containers provide service for applications
+services:    
+  servicename: # a friendly name. this is also DNS name inside network
+    image: # Optional if you use build:
+    command: # Optional, replace the default CMD specified by the image
+    environment: # Optional, same as -e in docker run
+    volumes: # Optional, same as -v in docker run
+  servicename2:
+
+# Optional, same as docker volume create
+volumes: 
+
+# Optional, same as docker network create
+networks:

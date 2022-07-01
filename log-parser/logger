@@ -1,0 +1,12 @@
+compress
+
+/var/log/logger/success.log {
+    rotate 3
+    daily
+}
+
+/var/log/logger/error.log {
+    rotate 3
+    size 1M
+    nocompress
+}

@@ -1,0 +1,8 @@
+[Unit]
+Description=My logger shell script
+
+[Service]
+ExeStart=/usr/local/bin/logger.sh
+
+[Install]
+wantedBy=multi-user.target

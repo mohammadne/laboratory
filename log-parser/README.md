@@ -1,6 +1,6 @@
 # Log Parser
 
-> use logrotate utility to manage log files.
+> use logrotate utility to manage log files of a created service.
 
 ## Task
 

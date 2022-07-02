@@ -19,6 +19,10 @@
 
 2. copy `logger.service` systemd unit in `/etc/systemd/system`.
 
+> systemd is the init process on linux which is a collection of other tools like `systemctl`, `journalctl`, `init`, `process managment`, `networkd` (network manager), `logind` (login managment) and etc.
+>
+> systemd units are any entity managed by systemd like services, sockets, devices and etc.
+
     ``` bash
     sudo cp ./logger.service /etc/systemd/system
     ```

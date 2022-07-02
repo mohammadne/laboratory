@@ -21,14 +21,25 @@
     sudo usermod -a -G libvirt $(whoami)
     ```
 
-3. change the resolution
+3. download an ISO and install virtual machine
 
-    ``` xml
-    <video>
-    <model type="qxl" ram="65536" vram="65536" vgamem="16384" heads="1" primary="yes">
-        <resolution x="1600" y="900"/>
-    </model>
-    <alias name="video0"/>
-    <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x0"/>
-    </video>
+4. install necessary tools on vm
+
+    ``` bash
+    sudo apt update
+
+    sudo apt install openssh-server
+    sudo systemctl enable ssh
+    sudo systemctl start ssh
+
+    sudo apt install net-tools
+
+    # copy the inet ip
+    ifconfig
+    ```
+
+5. connect via guest machine
+
+    ``` bash
+    ssh <server-username>@<ip-address>
     ```

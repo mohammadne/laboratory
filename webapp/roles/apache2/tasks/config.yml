@@ -9,3 +9,23 @@
   template:
     src: templates/index.conf.j2
     dest: /var/www/html/index.html
+
+- name: "UFW - Allow HTTP on port {{ http_port }}"
+  ufw:
+    rule: allow
+    port: "{{ http_port }}"
+    proto: tcp
+
+- name: "Create document root for Virtual Host"
+  file:
+    path: "/var/www/{{ http_host }}"
+    state: directory
+    owner: "www-data"
+    group: "www-data"
+    mode: '0755'
+
+- name: Set up Apache Virtual Host
+  template:
+    src: "files/virtual-host.conf.j2"
+    dest: "/etc/apache2/sites-available/{{ http_conf }}"
+  notify: Reload Apache

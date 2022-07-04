@@ -1,4 +1,4 @@
-- hosts: webapp
+- hosts: lamp
   become: yes
   vars:
     http_port: 8000

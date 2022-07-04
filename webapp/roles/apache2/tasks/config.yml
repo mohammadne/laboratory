@@ -6,7 +6,7 @@
 
 - name: "Create document root for Virtual Host"
   file:
-    path: "/var/www/{{ http_host }}"
+    path: "/var/www/{{ hostname }}"
     state: directory
     owner: "www-data"
     group: "www-data"
@@ -15,23 +15,19 @@
 - name: Set up Apache Virtual Host
   template:
     src: "files/virtual-host.conf.j2"
-    dest: "/etc/apache2/sites-available/{{ http_conf }}"
+    dest: "/etc/apache2/sites-available/{{ hostname }}.conf"
   notify: reload-apache
 
 - name: "enable rewrite module"
   shell: /usr/sbin/a2enmod rewrite
   notify: reload-apache
 
-- name: "enable new virtual host"
-  shell: /usr/sbin/a2ensite {{ http_conf }}
+- name: "enable new site"
+  shell: /usr/sbin/a2ensite {{ hostname }}.conf
   notify: reload-apache
 
 - name: "disable default Apache website"
   shell: /usr/sbin/a2dissite 000-default.conf
-  notify: restart-apache
-
-- name: "make sure your configuration file doesn't contain syntax errors"
-  shell: /usr/sbin/apache2ctl configtest
   notify: restart-apache
 
 - name: "ensure apache is running and changes effected"

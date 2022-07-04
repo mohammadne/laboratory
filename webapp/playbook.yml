@@ -1,9 +1,10 @@
 - hosts: webapp
   become: yes
   vars:
-    - http_host: "webapp"
+    - hostname: "webapp"
+    - http_port: 80
   roles:
     - apache2
-    - mysql
-    - php
+    # - mysql
+    # - php
     - wordpress

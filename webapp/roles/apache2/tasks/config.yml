@@ -24,6 +24,12 @@
     src: templates/index.conf.j2
     dest: /var/www/{{ http_host }}/index.html
 
+- name: test script to confirm that Apache is able to handle and process requests for PHP files
+  template:
+    src: "files/info.php"
+    dest: /var/www/{{ http_host }}/info.php
+  notify: reload-apache
+
 - name: Set up Apache Virtual Host
   template:
     src: "files/virtual-host.conf.j2"

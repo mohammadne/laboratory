@@ -1,0 +1,6 @@
+- name: ensure php is at the latest version
+  loop: ['php', 'php-mysql', 'libapache2-mod-php', 'php_modules']
+  apt:
+    name: {{ item }}
+    state: latest
+    update_cache: yes

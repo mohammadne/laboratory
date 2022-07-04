@@ -6,6 +6,7 @@
     html_welcome_message: "Hello World"
 
   tasks:
+  - import_tasks: tasks/requirements_install.yml
   - import_tasks: tasks/apache2_install.yml
 
   handlers:

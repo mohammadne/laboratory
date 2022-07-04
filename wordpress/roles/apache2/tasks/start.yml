@@ -1,0 +1,4 @@
+- name: ensure apache is running
+  service:
+    name: apache2
+    state: started

@@ -1,1 +1,4 @@
-- include: apache2_install.yml
+---
+- include: install.yml
+- include: config.yml
+- include: start.yml

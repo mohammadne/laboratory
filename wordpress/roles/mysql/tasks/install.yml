@@ -1,0 +1,5 @@
+- name: ensure mysql is at the latest version
+  apt:
+    name: mysql-server
+    state: latest
+    update_cache: yes

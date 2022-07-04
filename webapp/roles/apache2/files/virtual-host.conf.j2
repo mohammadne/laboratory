@@ -1,17 +1,13 @@
 <VirtualHost *:{{ http_port }}>
     ServerAdmin webmaster@localhost
-    ServerName {{ http_host }}
-    ServerAlias www.{{ http_host }}
-    DocumentRoot /var/www/{{ http_host }}/wordpress
+    ServerName {{ hostname }}
+    ServerAlias www.{{ hostname }}
+    DocumentRoot /var/www/{{ hostname }}/wordpress
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-    <Directory /var/www/{{ http_host }}>
-          Options -Indexes
+    <Directory /var/www/{{ hostname }}>
           AllowOverride All
     </Directory>
 
-    <IfModule mod_dir.c>
-        DirectoryIndex index.php index.html index.cgi index.pl  index.xhtml index.htm
-    </IfModule>
 </VirtualHost>

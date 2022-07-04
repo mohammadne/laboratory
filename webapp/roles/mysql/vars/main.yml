@@ -1,4 +1,1 @@
-mysql_root_password: "password"
-mysql_db: "wordpress"
-mysql_user: "wordpress_user"
-mysql_password: "password"
+---

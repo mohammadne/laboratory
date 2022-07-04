@@ -1,0 +1,12 @@
+- hosts: proxy
+  become: yes
+  vars:
+    http_port: 8000
+    https_port: 4443
+    html_welcome_message: "Hello World"
+
+  tasks:
+  - import_tasks: tasks/apache2_install.yml
+
+  handlers:
+  - import_tasks: handlers/apache2_restart.yml

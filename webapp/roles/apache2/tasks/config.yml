@@ -4,12 +4,6 @@
     src: templates/ports.conf.j2
     dest: /etc/apache2/ports.conf
 
-- name: write the apache index page
-  notify: restart-apache
-  template:
-    src: templates/index.conf.j2
-    dest: /var/www/{{ http_host }}/index.html
-
 - name: "UFW - Allow HTTP on port {{ http_port }}"
   ufw:
     rule: allow
@@ -23,6 +17,12 @@
     owner: "www-data"
     group: "www-data"
     mode: '0755'
+
+- name: write the apache index page
+  notify: restart-apache
+  template:
+    src: templates/index.conf.j2
+    dest: /var/www/{{ http_host }}/index.html
 
 - name: Set up Apache Virtual Host
   template:

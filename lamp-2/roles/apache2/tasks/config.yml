@@ -36,10 +36,6 @@
     dest: "/etc/apache2/sites-available/{{ http_conf }}"
   notify: reload-apache
 
-- name: "enable rewrite module"
-  shell: /usr/sbin/a2enmod rewrite
-  notify: reload-apache
-
 - name: "enable new virtual host"
   shell: /usr/sbin/a2ensite {{ http_conf }}
   notify: reload-apache

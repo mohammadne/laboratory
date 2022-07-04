@@ -1,4 +1,4 @@
-- hosts: lamp
+- hosts: webapp
   become: yes
   roles:
     - apache2

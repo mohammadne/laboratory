@@ -1,4 +1,4 @@
-# Wordpress
+# LAMP 1
 
 ## run
 

@@ -7,3 +7,18 @@
     - php
     - php-mysql
     - libapache2-mod-php
+
+- name: install PHP extensions for wordpress
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop: 
+    - php-curl 
+    - php-gd 
+    - php-mbstring 
+    - php-xml 
+    - php-xmlrpc 
+    - php-soap 
+    - php-intl 
+    - php-zip

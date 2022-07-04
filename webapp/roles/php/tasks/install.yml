@@ -1,0 +1,17 @@
+- name: ensure php is at the latest version
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop: 
+    - php
+    - php-mysql
+    - libapache2-mod-php
+    - php-curl
+    - php-gd
+    - php-mbstring
+    - php-xml
+    - php-xmlrpc
+    - php-soap
+    - php-intl
+    - php-zip

@@ -13,25 +13,7 @@
         state: latest 
         force_apt_get: yes
 
-    - name: ensure apache is at the latest version
-      apt:
-        name: apache2
-        state: latest
-
-    - name: write the apache config file
-      notify: restart apache
-      template:
-        src: templates/ports.conf.j2
-        dest: /etc/apache2/ports.conf
-
-    - name: write the apache index page
-      notify: restart apache
-      template:
-        src: templates/index.conf.j2
-        dest: /var/www/html/index.html
+    - include_tasks: tasks/apache2_install.yml
 
   handlers:
-    - name: restart apache
-      service:
-        name: apache2
-        state: restarted
+    - include_tasks: handlers/main.yml

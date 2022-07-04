@@ -1,2 +1,2 @@
 ---
-# tasks file for roles/wordpress
+- include_tasks: install.yml

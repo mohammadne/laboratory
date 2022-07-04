@@ -1,5 +1,7 @@
 - hosts: webapp
   become: yes
+  vars:
+    - http_host: "webapp"
   roles:
     - apache2
     - mysql

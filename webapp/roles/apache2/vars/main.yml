@@ -1,4 +1,2 @@
-http_host: "wordpress"
-http_conf: "wordpress.conf"
-http_port: 8000
-https_port: 4430
+http_conf: "webapp.conf"
+http_port: 80

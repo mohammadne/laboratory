@@ -1,0 +1,37 @@
+- hosts: webapp
+  become: yes
+  vars:
+    http_port: 8000
+    https_port: 4443
+    html_welcome_message: Hello
+
+  tasks:
+    - name: install prerequisites
+      apt: 
+        name: aptitude 
+        update_cache: yes 
+        state: latest 
+        force_apt_get: yes
+
+    - name: ensure apache is at the latest version
+      apt:
+        name: apache2
+        state: latest
+
+    - name: write the apache config file
+      notify: restart apache
+      template:
+        src: templates/ports.conf.j2
+        dest: /etc/apache2/ports.conf
+
+    - name: write the apache index page
+      notify: restart apache
+      template:
+        src: templates/index.conf.j2
+        dest: /var/www/html/index.html
+
+  handlers:
+    - name: restart apache
+      service:
+        name: apache2
+        state: restarted

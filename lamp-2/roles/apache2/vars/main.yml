@@ -1,0 +1,4 @@
+http_host: "my_domain"
+http_conf: "my_domain.conf"
+http_port: 8000
+https_port: 4430

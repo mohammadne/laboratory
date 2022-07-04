@@ -1,10 +1,5 @@
 - hosts: lamp
   become: yes
-  vars:
-    http_port: 8000
-    https_port: 4443
-    html_welcome_message: Hello
-
   roles:
     - apache2
     - mysql

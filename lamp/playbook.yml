@@ -6,5 +6,6 @@
     html_welcome_message: Hello
 
   roles:
-    - common
     - apache2
+    - mysql
+    - php

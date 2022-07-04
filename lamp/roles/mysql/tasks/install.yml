@@ -1,5 +1,10 @@
-- name: ensure mysql is at the latest version
+- name: "ensure mysql is at the latest version"
   apt:
     name: mysql-server
+    state: latest
+    
+- name: "install python3 mysql dependency"
+  apt:
+    name: python3-mysqldb
     state: latest
     update_cache: yes

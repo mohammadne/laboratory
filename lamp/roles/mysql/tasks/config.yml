@@ -2,6 +2,8 @@
   mysql_user:
     name: root
     password: "{{ mysql_root_password }}"
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
     login_unix_socket: /var/run/mysqld/mysqld.sock
 
 - name: Remove all anonymous user accounts
@@ -34,4 +36,3 @@
     state: present
     login_user: root
     login_password: "{{ mysql_root_password }}"
-

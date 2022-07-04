@@ -1,6 +1,0 @@
-- name: install requirements
-  apt: 
-    name: aptitude 
-    update_cache: yes 
-    state: latest 
-    force_apt_get: yes

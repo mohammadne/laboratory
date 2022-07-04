@@ -1,0 +1,9 @@
+- name: install prerequisites
+  apt: 
+    name: aptitude 
+    update_cache: yes 
+    state: latest 
+    force_apt_get: yes
+
+
+- include: apache2_install.yml

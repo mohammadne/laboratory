@@ -5,15 +5,5 @@
     https_port: 4443
     html_welcome_message: Hello
 
-  tasks:
-    - name: install prerequisites
-      apt: 
-        name: aptitude 
-        update_cache: yes 
-        state: latest 
-        force_apt_get: yes
-
-    - include_tasks: tasks/apache2_install.yml
-
-  handlers:
-    - include_tasks: handlers/main.yml
+  roles:
+    - apache2

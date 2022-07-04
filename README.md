@@ -1,5 +1,15 @@
 # Ansible Lab
 
+<p align="center">
+  <img src="assets/logo.jpg" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/license/mohammadne/ansible-lab?style=for-the-badge">
+  <img src="https://img.shields.io/github/stars/mohammadne/ansible-lab?style=for-the-badge">
+  <img src="https://img.shields.io/github/downloads/mohammadne/ansible-lab/total.svg?style=for-the-badge">
+</p>
+
 ## setup
 
 ``` bash

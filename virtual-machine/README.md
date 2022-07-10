@@ -35,7 +35,7 @@
     sudo apt install net-tools
 
     # copy the inet ip
-    ifconfig
+    ip address show
     ```
 
 5. connect via guest machine

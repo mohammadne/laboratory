@@ -29,8 +29,3 @@
 - name: "disable default Apache website"
   shell: /usr/sbin/a2dissite 000-default.conf
   notify: restart-apache
-
-- name: "ensure apache is running and changes effected"
-  service:
-    name: apache2
-    state: restarted

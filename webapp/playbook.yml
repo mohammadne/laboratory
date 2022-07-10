@@ -2,6 +2,13 @@
   become: yes
   roles:
     - apache2
+      tags: [ apache ]
+
     - mysql
+      tags: [ mysql ]
+
     - php
+      tags: [ php ]
+
     - wordpress
+      tags: [ wordpress ]

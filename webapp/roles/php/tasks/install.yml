@@ -7,8 +7,6 @@
     - php
     - php-mysql
     - libapache2-mod-php
-  tags:
-    - install
 
 - name: install PHP extensions for wordpress
   package:
@@ -24,5 +22,3 @@
     - php-soap 
     - php-intl 
     - php-zip
-  tags:
-    - install

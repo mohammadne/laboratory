@@ -1,0 +1,18 @@
+---
+- name: Copy the job script into desired location
+  copy:
+    src: "files/{{ job_name }}.sh"
+    dest: "/usr/local/bin"
+
+- name: Set permissions for directories
+  shell: "chmod +x /usr/local/bin/{{ job_name }}.sh"
+
+- name: Prune dangling/unused docker containers/images weekly
+  cron:
+    state: present
+    user: "root"
+    minute: "30"
+    hour: "1"
+    weekday: "fri"
+    cron_file: "{{ job_name }}"
+    job: "/usr/local/bin/{{ job_name }}.sh"

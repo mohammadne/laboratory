@@ -1,0 +1,4 @@
+- hosts: virtual-machine
+  become: yes
+  roles:
+    - cron

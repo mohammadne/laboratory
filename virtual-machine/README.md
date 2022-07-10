@@ -28,17 +28,16 @@
     ``` bash
     sudo apt update
 
+    # install ssh server on VM
     sudo apt install openssh-server
     sudo systemctl enable ssh
     sudo systemctl start ssh
-
-    sudo apt install net-tools
 
     # copy the inet ip
     ip address show
     ```
 
-5. connect via guest machine
+5. connect to the VM via ssh
 
     ``` bash
     ssh <server-username>@<ip-address>

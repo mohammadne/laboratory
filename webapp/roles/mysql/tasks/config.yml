@@ -5,6 +5,8 @@
     login_user: root
     login_password: "{{ mysql_root_password }}"
     login_unix_socket: /var/run/mysqld/mysqld.sock
+  tags:
+    - config
 
 - name: Remove all anonymous user accounts
   mysql_user:
@@ -13,6 +15,8 @@
     state: absent
     login_user: root
     login_password: "{{ mysql_root_password }}"
+  tags:
+    - config
 
 - name: Remove the MySQL test database
   mysql_db:
@@ -20,6 +24,8 @@
     state: absent
     login_user: root
     login_password: "{{ mysql_root_password }}"
+  tags:
+    - config
 
 - name: Creates database for WordPress
   mysql_db:
@@ -27,6 +33,8 @@
     state: present
     login_user: root
     login_password: "{{ mysql_root_password }}"
+  tags:
+    - config
 
 - name: Create MySQL user for WordPress
   mysql_user:
@@ -36,3 +44,5 @@
     state: present
     login_user: root
     login_password: "{{ mysql_root_password }}"
+  tags:
+    - config

@@ -2,9 +2,13 @@
   package:
     name: mysql-server
     state: latest
-    
+  tags:
+    - install
+
 - name: "install python3 mysql dependency"
   package:
     name: python3-mysqldb
     state: latest
     update_cache: yes
+  tags:
+    - install

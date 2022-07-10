@@ -3,6 +3,8 @@
     rule: allow
     port: "{{ http_port }}"
     proto: tcp
+  tags:
+    - config
 
 - name: "Create document root for Virtual Host"
   file:
@@ -11,21 +13,31 @@
     owner: "www-data"
     group: "www-data"
     mode: '0755'
+  tags:
+    - config
 
 - name: Set up Apache Virtual Host
   template:
     src: "files/virtual-host.conf.j2"
     dest: "/etc/apache2/sites-available/{{ hostname }}.conf"
   notify: reload-apache
+  tags:
+    - config
 
 - name: "enable rewrite module"
   shell: /usr/sbin/a2enmod rewrite
   notify: reload-apache
+  tags:
+    - config
 
 - name: "enable new site"
   shell: /usr/sbin/a2ensite {{ hostname }}.conf
   notify: reload-apache
+  tags:
+    - config
 
 - name: "disable default Apache website"
   shell: /usr/sbin/a2dissite 000-default.conf
   notify: restart-apache
+  tags:
+    - config

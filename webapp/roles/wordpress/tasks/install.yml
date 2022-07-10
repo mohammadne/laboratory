@@ -4,6 +4,8 @@
     dest: "/var/www/{{ hostname }}"
     remote_src: yes
     creates: "/var/www/{{ hostname }}/wordpress"
+  tags:
+    - install
 
 - name: Set ownership
   file:
@@ -12,14 +14,22 @@
     recurse: yes
     owner: www-data
     group: www-data
+  tags:
+    - install
 
 - name: Set permissions for directories
   shell: "/usr/bin/find /var/www/{{ hostname }}/wordpress/ -type d -exec chmod 750 {} \\;"
+  tags:
+    - install
 
 - name: Set permissions for files
   shell: "/usr/bin/find /var/www/{{ hostname }}/wordpress/ -type f -exec chmod 640 {} \\;"
+  tags:
+    - install
 
 - name: Set up wp-config
   template:
     src: "files/wp-config.php.j2"
     dest: "/var/www/{{ hostname }}/wordpress/wp-config.php"
+  tags:
+    - install

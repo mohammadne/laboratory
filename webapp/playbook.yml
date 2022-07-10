@@ -1,14 +1,14 @@
 - hosts: webapp
   become: yes
   roles:
-    - apache2
-      tags: [ apache ]
+    - role: apache2
+      tags: apache
 
-    - mysql
-      tags: [ mysql ]
+    - role: mysql
+      tags: mysql
 
-    - php
-      tags: [ php ]
+    - role: php
+      tags: php
 
-    - wordpress
-      tags: [ wordpress ]
+    - role: wordpress
+      tags: wordpress

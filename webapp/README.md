@@ -8,11 +8,11 @@
 # test variables are correctly set
 ansible -i hosts --ask-vault-pass -m debug -a 'var=hostvars[inventory_hostname]' webapp
 
-# run the playbook with config tag
-ansible-playbook -i hosts --ask-vault-pass -u slave -K playbook.yml --tags config
+# list all the tags
+ansible-playbook -i hosts --ask-vault-pass -u slave -K playbook.yml --list-tags
 
 # run the playbook skip php tags
-ansible-playbook -i hosts --ask-vault-pass -u slave -K playbook.yml --skip-tags php
+ansible-playbook -i hosts --ask-vault-pass -u slave -K playbook.yml --skip-tags "php"
 
 # run all the playbook
 ansible-playbook -i hosts --ask-vault-pass -u slave -K playbook.yml

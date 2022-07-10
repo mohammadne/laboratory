@@ -1,4 +1,7 @@
+---
 hostname: "webapp"
 http_port: 80
+mysql_root_password: "{{ vault_mysql_root_password }}"
 mysql_db: "wordpress"
 mysql_user: "wordpress_user"
+mysql_user_password: "{{ vault_mysql_user_password }}"

@@ -5,6 +5,9 @@
 ## run
 
 ``` bash
+# test variables are correctly set
+ansible -i hosts --ask-vault-pass -m debug -a 'var=hostvars[inventory_hostname]' webapp
+
 # run the playbook
-ansible-playbook -i hosts -u slave -K playbook.yml
+ansible-playbook -i hosts --ask-vault-pass -u slave -K playbook.yml
 ```

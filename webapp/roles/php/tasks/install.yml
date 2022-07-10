@@ -1,5 +1,5 @@
 - name: ensure php is at the latest version
-  apt:
+  package:
     name: "{{ item }}"
     state: latest
     update_cache: yes
@@ -9,7 +9,7 @@
     - libapache2-mod-php
 
 - name: install PHP extensions for wordpress
-  apt:
+  package:
     name: "{{ item }}"
     state: latest
     update_cache: yes

@@ -31,7 +31,7 @@
 - name: Create MySQL user for WordPress
   mysql_user:
     name: "{{ mysql_user }}"
-    password: "{{ mysql_password }}"
+    password: "{{ mysql_user_password }}"
     priv: "{{ mysql_db }}.*:ALL"
     state: present
     login_user: root

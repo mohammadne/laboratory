@@ -17,8 +17,6 @@ services:
     image: nginx:1.23.0
     container_name: backend
     restart: "always"
-    ports:
-      - "8001:80"
     volumes:
       - type: bind
         source: ./configs/backend.conf

@@ -5,7 +5,7 @@ services:
     container_name: reverse-proxy
     restart: "always"
     ports:
-      - "8080:80"
+      - "8000:80"
     volumes:
       - type: bind
         source: ./configs/reverse-proxy.conf
@@ -18,7 +18,7 @@ services:
     container_name: backend
     restart: "always"
     ports:
-      - "8081:80"
+      - "8001:80"
     volumes:
       - type: bind
         source: ./configs/backend.conf

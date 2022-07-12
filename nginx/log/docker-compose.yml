@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  reverse-proxy:
+    image: nginx:1.23.0
+    container_name: reverse-proxy
+    restart: "always"
+    ports:
+      - "8000:80"
+    volumes:
+      - type: bind
+        source: ./configs/reverse-proxy.conf
+        target: /etc/nginx/conf.d/default.conf
+    networks:
+      - custom-network
+
+  backend:
+    image: nginx:1.23.0
+    container_name: backend
+    restart: "always"
+    ports:
+      - "8001:80"
+    volumes:
+      - type: bind
+        source: ./configs/backend.conf
+        target: /etc/nginx/conf.d/default.conf
+    networks:
+      - custom-network
+
+networks:
+  custom-network:
+    driver: bridge

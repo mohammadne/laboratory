@@ -47,6 +47,8 @@ ab -n 100 -v 4 http://127.0.0.1:8000/ | grep 'requesting to server with port:' |
 
 ## rate-limit
 
+- in this scenario we try to implement a reverse proxy that forbid the requests that are extra our defined limits.
+
 ``` nginx
 limit_req_zone $binary_remote_addr zone=limit:10m rate=10r/s;
 # Key: Defines the request characteristic
@@ -69,3 +71,24 @@ curl localhost:8000
 ab -n 20 -v 4 http://127.0.0.1:8000/ 
 #  Non-2xx responses:      9 (503 status code)
 ```
+
+## log
+
+- in this scenario we try to change the default log format and apply our custom one.
+
+``` bash
+# hit the reverse proxy 5 times
+for i in {1..5}; do curl localhost:8000/salam; done
+
+# run bash inside backend
+docker exec -it backend bash
+
+# run bash inside backend
+docker exec -it backend cat /var/log/nginx/acceess.log
+
+# files are just symbolic links to the device files /dev/stdout and /dev/stderr. 
+# That's why you can't see any updates to them
+# so get the logs via docker logs
+docker logs backend
+```
+

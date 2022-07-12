@@ -19,8 +19,8 @@ curl localhost:8000/i-love-devops
 - in this scenario we have a reverse proxy in fron of a backend service and proxy the request to our backend and respond to the client via his/her request uri but here we intercept the uri
 
 ``` bash
-curl localhost:8000/v2/devops
-# leads to -> version: 1, uri: devops
+curl localhost:8000/v2/customers/ANDBD9n7jlQwxTScIAuK/devops
+# leads to -> version: 1, customer-id: ANDBD9n7jlQwxTScIAuK, uri: devops
 
 curl localhost:8000/custon-name/devops
 # leads to -> no version, uri: /custon-name/devops
@@ -91,4 +91,3 @@ docker exec -it backend cat /var/log/nginx/acceess.log
 # so get the logs via docker logs
 docker logs backend
 ```
-

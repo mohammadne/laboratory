@@ -1,4 +1,4 @@
-# Apache2
+# Nginx proxy
 
 ## run
 

@@ -1,6 +1,0 @@
----
-
-- hosts: proxy
-  become: yes
-  roles:
-    - nginx

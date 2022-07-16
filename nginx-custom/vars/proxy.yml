@@ -1,3 +1,4 @@
 ---
+nginx_version: 1.23.0 # https://nginx.org/en/download.html
 http_port: 80
 hostname: my_hostname

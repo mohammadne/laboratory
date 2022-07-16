@@ -1,0 +1,29 @@
+---
+- name: Install requirements on Debian based distros
+  when: ansible_os_family == 'Debian'
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - build-essential # C compiler
+    - libpcre3 # regex
+    - libpcre3-dev
+    - zlib1g # gzip
+    - zlib1g-dev
+    - libssl-dev # HTTPS (TLS) support
+
+- name: Install requirements on RedHat based distros
+  when: ansible_os_family == 'RedHat'
+  yum:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - "@Development tools" # C compiler
+    - pcre # regex
+    - pcre-devel
+    - zlib # gzip
+    - zlib-devel
+    - openssl # HTTPS (TLS) support
+    - openssl-devel # HTTPS (TLS) support

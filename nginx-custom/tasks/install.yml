@@ -1,10 +1,14 @@
 ---
-- name: ensure nginx is at the latest version
-  package:
-    name: nginx
-    state: latest
+- name: Download and unpack latest Nginx
+  unarchive:
+    src: https://nginx.org/download/nginx-{{ nginx_version }}.tar.gz
+    dest: "/tmp"
+    remote_src: yes
+    creates: "/tmp/nginx-{{ nginx_version }}"
 
-- name: ensure nginx is running
-  service:
-    name: nginx
-    state: started
+- name: configure Nginx installation
+  shell: "sudo /tmp/nginx-{{ nginx_version }}/configure"
+  register: result
+
+- debug: var=result.stdout_lines
+  # shell: /tmp/nginx-{{ nginx_version }}/configure

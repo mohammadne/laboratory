@@ -36,15 +36,16 @@
     cd /tmp/nginx-{{ nginx_version }}
     make install
 
-- name: get nginx version
-  shell: "nginx -v"
-  register: nginx_version
+# - name: get nginx version
+#   shell: "nginx -v"
+#   register: nginx_version
 
-- name: test
-  assert:
-    that: "'nginx version: nginx/{{ nginx_version }}' in nginx_version"
-    fail_msg: "fail_msg"
-    success_msg: "success_msg"
+# - name: test
+#   assert:
+#     that: "'nginx version: nginx/{{ nginx_version }}' in nginx_version"
+#     fail_msg: "fail_msg"
+#     success_msg: "success_msg"
+  # any_errors_fatal: true
 
 # - debug: var=nginx_version.stdout_lines
 

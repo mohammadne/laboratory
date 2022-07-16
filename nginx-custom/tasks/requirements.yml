@@ -12,6 +12,7 @@
     - zlib1g # gzip
     - zlib1g-dev
     - libssl-dev # HTTPS (TLS) support
+    - libgd-dev # image filter module
 
 - name: Install requirements on RedHat based distros
   when: ansible_os_family == 'RedHat'
@@ -27,3 +28,5 @@
     - zlib-devel
     - openssl # HTTPS (TLS) support
     - openssl-devel # HTTPS (TLS) support
+    - gd # image filter module
+    - gd-devel

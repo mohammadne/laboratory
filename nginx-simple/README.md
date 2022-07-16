@@ -1,5 +1,7 @@
 # Nginx Simple
 
+> simple Nginx setup to act as a proxy server installed with appropriate package manager
+
 ## run
 
 ``` bash

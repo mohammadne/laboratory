@@ -1,1 +1,9 @@
 ---
+- hosts: proxy
+  become: yes
+  vars_files: vars/proxy.yml
+  tasks:
+  - import_tasks: tasks/install.yml
+  - import_tasks: tasks/configuration.yml
+  handlers:
+  - import_tasks: handlers/common.yml

@@ -1,5 +1,6 @@
 # k8s Lab
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/51189292/185852870-e3c517dc-e2e0-4572-bb65-2e8b43ce68bd.gif">
+  <img src="https://cdn.dribbble.com/users/530731/screenshots/14727271/boo_4x.png">
 </p>
+

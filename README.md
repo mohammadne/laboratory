@@ -1,4 +1,4 @@
-# RWX
+# Linux Lab
 
 > this repository holds basic tutorials, examples, challenges about `Linux`
 >

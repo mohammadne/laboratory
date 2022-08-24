@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: helloworld-pod
+  labels:
+    app: helloworld
+spec:
+  containers:
+    - name: helloworld-container
+      image: wardviaene/k8s-demo
+      ports:
+        - name: nodejs-port
+          containerPort: 3000
+
+      resources:
+        limits:
+          memory: 200Mi
+          cpu: 200m
+        requests:
+          memory: 160Mi
+          cpu: 60m

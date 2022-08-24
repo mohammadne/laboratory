@@ -1,5 +1,5 @@
 # create resource 
-kubectl create -f helloworld.yml
+kubectl create -f helloworld-pod.yml
 
 # get a SHELL into the pod
 kubectl exec --stdin --tty helloworld-pod -- /bin/bash

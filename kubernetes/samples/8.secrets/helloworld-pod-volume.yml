@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: helloworld-pod
+  labels:
+    app: helloworld
+spec:
+  containers:
+    - name: helloworld-container
+      image: wardviaene/k8s-demo
+      ports:
+        - name: nodejs-port
+          containerPort: 3000
+      volumeMounts:
+        - name: secrets
+          mountPath: /etc/creds # /etc/creds/helloworld-secrets/username & /etc/creds/helloworld-secrets/password
+          readOnly: true
+      resources: {}
+  volumes:
+    - name: secrets
+      secret:
+        secretName: helloworld-secrets

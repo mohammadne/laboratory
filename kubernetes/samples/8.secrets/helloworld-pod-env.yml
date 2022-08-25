@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: helloworld-pod
+  labels:
+    app: helloworld
+spec:
+  containers:
+    - name: helloworld-container
+      image: wardviaene/k8s-demo
+      ports:
+        - name: nodejs-port
+          containerPort: 3000
+      resources: {}
+      env:
+        - name: SECRET_USENAME
+          valueFrom:
+            secretKeyRef:
+              name: helloworld-secrets
+              key: username
+        - name: SECRET_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: helloworld-secrets
+              key: password

@@ -11,14 +11,7 @@ spec:
       ports:
         - name: nodejs-port
           containerPort: 3000
-
-      resources:
-        limits:
-          memory: 200Mi
-          cpu: 200m
-        requests:
-          memory: 160Mi
-          cpu: 60m
+      resources: {}
 
       readinessProbe:
         initialDelaySeconds: 15

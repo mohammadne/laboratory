@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: helloworld
+  ports:
+    - port: 31006
+      nodePort: 31007
+      targetPort: nodejs-port
+      protocol: TCP

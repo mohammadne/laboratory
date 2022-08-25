@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: helloworld-pod
+  labels:
+    app: helloworld
+spec:
+  containers:
+    - name: helloworld-container
+      image: wardviaene/k8s-demo
+      ports:
+        - name: nodejs-port
+          containerPort: 3000
+
+      resources:
+        limits:
+          memory: 200Mi
+          cpu: 200m
+        requests:
+          memory: 160Mi
+          cpu: 60m
+
+      readinessProbe:
+        initialDelaySeconds: 15
+        timeoutSeconds: 30
+        httpGet:
+          path: /
+          port: nodejs-port
+          scheme: HTTP
+
+      livenessProbe:
+        successThreshold: 1
+        failureThreshold: 3
+        initialDelaySeconds: 15
+        timeoutSeconds: 30
+        periodSeconds: 10
+        httpGet:
+          path: /
+          port: nodejs-port
+          scheme: HTTP

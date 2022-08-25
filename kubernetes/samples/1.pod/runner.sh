@@ -11,7 +11,8 @@ kubectl get service
 kubectl describe service helloworld-svc
 
 # run a debug pod
-kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
+kubectl run busybox -it --image=busybox --restart=Never --rm=true
 > telnet <ENDPOINT> <PORT> (from describe of service)
 > GET /
+
 kubectl delete pod busybox

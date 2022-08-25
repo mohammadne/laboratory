@@ -1,5 +1,7 @@
-#! note: in okd environment because you don't have permission on busybox container
-#! this process will be failed, run it on other clouds like okteto.
+#!/bin/bash
+
+# note: in okd environment because you don't have permission on busybox container
+# this process will be failed, run it on other clouds like okteto.
 
 # run 2 CMDs:
 

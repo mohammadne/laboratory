@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # kubectl
 kubectl expose deployment wordpress-deployment --port=31001 --type=NodePort
 

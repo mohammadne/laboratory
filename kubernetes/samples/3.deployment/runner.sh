@@ -1,3 +1,5 @@
+#!/bin/bash
+
 kubectl create -f 2.deployment.yml --record
 # --record: record rollout change-cause when using rollout history to show them
 

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # create resource 
 kubectl create -f helloworld-pod.yml
 

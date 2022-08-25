@@ -1,3 +1,5 @@
+#!/bin/bash
+
 kubectl create -f rcss.yml
 
 kubectl get pods

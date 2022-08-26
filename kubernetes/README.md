@@ -7,3 +7,7 @@
 ## useful repositories
 
 - [wardviaene kubernetes-course](https://github.com/wardviaene/kubernetes-course)
+
+## conventions
+
+- samples manifests: using name of the manifest plus the type of the object for example a deployment for helloworld would be `helloworld-deployment`.

@@ -13,7 +13,7 @@ spec:
           containerPort: 3000
       resources: {}
       env:
-        - name: SECRET_USENAME
+        - name: SECRET_USERNAME
           valueFrom:
             secretKeyRef:
               name: helloworld-secrets

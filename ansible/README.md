@@ -1,4 +1,4 @@
-# Ansible Lab
+# Ansible
 
 ## setup
 

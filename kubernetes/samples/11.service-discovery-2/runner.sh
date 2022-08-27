@@ -39,5 +39,5 @@ kubectl logs helloworld-deployment-id
 # connection to db established
 
 # hit node-js app from local computer
-kubectl port-forward service/helloworld-service 3000
-curl localhost:3000
+kubectl port-forward service/helloworld-service 8080:3000
+curl localhost:8080

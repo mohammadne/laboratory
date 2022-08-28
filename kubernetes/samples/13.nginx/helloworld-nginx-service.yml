@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-nginx-service
+spec:
+  ports:
+    - port: 31001
+      targetPort: nginx-port
+      protocol: TCP
+  selector:
+    app: helloworld-nginx
+  type: LoadBalancer

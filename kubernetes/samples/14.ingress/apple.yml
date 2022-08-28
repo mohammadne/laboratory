@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apple-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apple
+  template:
+    metadata:
+      labels:
+        app: apple
+    spec:
+      containers:
+        - name: apple-container
+          image: hashicorp/http-echo
+          args:
+            - "-text=apple"
+          ports:
+            - name: apple-port
+              containerPort: 5678
+          resources:
+            limits:
+              memory: 200Mi
+              cpu: 200m
+            requests:
+              memory: 160Mi
+              cpu: 60m
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apple-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: apple-port
+      protocol: TCP
+      name: http
+  selector:
+    app: apple-v1

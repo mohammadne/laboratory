@@ -35,11 +35,11 @@ kind: Service
 metadata:
   name: orange-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 80
       targetPort: orange-port
       protocol: TCP
       name: http
   selector:
-    app: orange-v1
+    app: orange

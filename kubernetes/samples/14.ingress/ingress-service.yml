@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ingress-service
+  labels:
+    app: ingress
+spec:
+  type: LoadBalancer
+  selector:
+    app: fruits-ingress
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+    - name: https
+      port: 443
+      targetPort: https

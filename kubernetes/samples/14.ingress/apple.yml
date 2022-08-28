@@ -35,11 +35,11 @@ kind: Service
 metadata:
   name: apple-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 80
       targetPort: apple-port
       protocol: TCP
       name: http
   selector:
-    app: apple-v1
+    app: apple

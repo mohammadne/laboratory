@@ -35,11 +35,11 @@ kind: Service
 metadata:
   name: banana-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 80
       targetPort: banana-port
       protocol: TCP
       name: http
   selector:
-    app: banana-v1
+    app: banana

@@ -1,0 +1,57 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:5.7
+          args:
+            - "--ignore-db-dir=lost+found"
+          ports:
+            - name: database
+              containerPort: 3306
+          resources:
+            limits:
+              memory: 200Mi
+              cpu: 200m
+            requests:
+              memory: 160Mi
+              cpu: 60m
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: db-password
+          volumeMounts:
+            - mountPath: "/var/lib/mysql"
+              name: database-storage
+      volumes:
+        - name: database-storage
+          persistentVolumeClaim:
+            claimName: storage
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+spec:
+  ports:
+    - port: 3306
+      protocol: TCP
+      targetPort: database
+  selector:
+    app: database
+  type: ClusterIP

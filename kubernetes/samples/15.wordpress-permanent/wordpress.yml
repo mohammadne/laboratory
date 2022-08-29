@@ -1,0 +1,100 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+        - name: wordpress
+          image: wordpress:4-php7.0
+          # uncomment to fix perm issue, see also https://github.com/kubernetes/kubernetes/issues/2630
+          # command: ['bash', '-c', 'mkdir -p /var/www/html/wp-content/uploads; chown www-data:www-data /var/www/html/wp-content/uploads && docker-entrypoint.sh apache2-foreground']
+          ports:
+            - name: wordpress
+              containerPort: 80
+          env:
+            - name: WORDPRESS_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: db-password
+            - name: WORDPRESS_AUTH_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: authkey
+            - name: WORDPRESS_LOGGED_IN_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: loggedinkey
+            - name: WORDPRESS_SECURE_AUTH_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: secureauthkey
+            - name: WORDPRESS_NONCE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: noncekey
+            - name: WORDPRESS_AUTH_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: authsalt
+            - name: WORDPRESS_SECURE_AUTH_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: secureauthsalt
+            - name: WORDPRESS_LOGGED_IN_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: loggedinsalt
+            - name: WORDPRESS_NONCE_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: noncesalt
+            - name: WORDPRESS_DB_HOST
+              value: wordpress-db
+          resources:
+            limits:
+              memory: 200Mi
+              cpu: 200m
+            requests:
+              memory: 160Mi
+              cpu: 60m
+          volumeMounts:
+            - mountPath: /var/www/html/wp-content/uploads
+              name: uploads
+      volumes:
+        - name: uploads
+          nfs:
+            server: eu-west-1a.fs-5714e89e.efs.eu-west-1.amazonaws.com
+            path: /
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+spec:
+  ports:
+    - port: 80
+      targetPort: wordpress
+      protocol: TCP
+  selector:
+    app: wordpress
+  type: LoadBalancer

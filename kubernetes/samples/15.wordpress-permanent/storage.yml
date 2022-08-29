@@ -1,0 +1,23 @@
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: standard
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp2
+  zone: eu-west-1a
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: storage
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "standard"
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 8Gi

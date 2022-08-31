@@ -28,6 +28,18 @@
 
 ## tools
 
-### netstat
+### ss, netstat
 
-### dig
+### host, dig, nslookup
+
+### ip, ifconfig
+
+### du
+
+### tcpdump, wireshark
+
+### systemctl, journalctl
+
+### ssh, telnet
+
+nmap

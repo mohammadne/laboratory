@@ -51,3 +51,5 @@
 1. download and install [UTM](https://mac.getutm.app/).
 
 2. check the configurations like the cpu architecture of the downloaded iso and etc.
+
+- in my case I have to use Emulate option rather than the Virtulize option to get it working for downloaded ubuntu amd64(x86_64) based architecture.

@@ -10,4 +10,4 @@
 >
 > to get dipper overview of the certificate contents, check over the [official website](https://www.lpi.org/our-certifications/lpic-1-overview)
 
-- the learning materials are from [a cloud guru Exam 101]() and [a cloud guru Exam 102]().
+- the learning materials are from [a cloud guru Exam 101](https://acloudguru.com/course/lpic-1-system-administrator-exam-101-v5-objectives) and [a cloud guru Exam 102](https://acloudguru.com/course/lpic-1-system-administrator-exam-102-v5-objectives).

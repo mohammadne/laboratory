@@ -30,10 +30,6 @@
 
 ### ss, netstat
 
-### host, dig, nslookup
-
-### ip, ifconfig
-
 ### du
 
 ### tcpdump, wireshark
@@ -42,4 +38,4 @@
 
 ### ssh, telnet
 
-nmap
+### nmap

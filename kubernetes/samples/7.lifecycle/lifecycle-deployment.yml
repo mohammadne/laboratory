@@ -24,7 +24,7 @@ spec:
             [
               "sh",
               "-c",
-              'echo $(date +%s): Running >> /timing && echo "The app is running!" && /bin/sleep 120',
+              'echo $(date +%s): Running >> /tmp/timing && echo "The app is running!" && /bin/sleep 120',
             ]
 
           resources:
@@ -38,13 +38,13 @@ spec:
           readinessProbe:
             exec:
               command:
-                ["sh", "-c", "echo $(date +%s): readinessProbe >> /timing"]
+                ["sh", "-c", "echo $(date +%s): readinessProbe >> /tmp/timing"]
             initialDelaySeconds: 35
 
           livenessProbe:
             exec:
               command:
-                ["sh", "-c", "echo $(date +%s): livenessProbe >> /timing"]
+                ["sh", "-c", "echo $(date +%s): livenessProbe >> /tmp/timing"]
             initialDelaySeconds: 35
             timeoutSeconds: 30
 
@@ -55,7 +55,7 @@ spec:
                   [
                     "sh",
                     "-c",
-                    "echo $(date +%s): postStart >> /timing && sleep 10 && echo $(date +%s): end postStart >> /timing",
+                    "echo $(date +%s): postStart >> /tmp/timing && sleep 10 && echo $(date +%s): end postStart >> /tmp/timing",
                   ]
             preStop:
               exec:
@@ -63,5 +63,5 @@ spec:
                   [
                     "sh",
                     "-c",
-                    "echo $(date +%s): preStop >> /timing && sleep 10",
+                    "echo $(date +%s): preStop >> /tmp/timing && sleep 10",
                   ]

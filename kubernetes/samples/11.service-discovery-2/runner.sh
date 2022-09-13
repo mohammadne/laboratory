@@ -8,14 +8,17 @@ kubectl apply \
 
 kubectl get pods
 
+# run tshoot image
+kubectl run -it --image=nicolaka/netshoot --rm=true --restart=Never tshoot -- bash
+> nslookup database-service
+> dig database-service # https://stackoverflow.com/questions/50668124
+> dig database-service.mohammadne-playground.svc.cluster.local
+> curl helloworld-service
+> cat /etc/resolv.conf
+
 # run a debug container to check mysql service is reachable
 kubectl run -it --image=mysql --rm=true --restart=Never mysql-testing -- sh
-> mysql -h mysql-service -u root -p # rootpassword
-
-# run curl inside alpine image
-kubectl run -it --image=alpine/curl --rm=true --restart=Never alpine-testing -- sh
-> curl -X HEAD -i database-service:3306
-> curl -X HEAD -i helloworld-service:3000
+> mysql -h database-service -u root -p # rootpassword
 
 # get into mysql database (check records)
 kubectl exec database -it -- mysql -u root -p

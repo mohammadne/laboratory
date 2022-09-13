@@ -1,6 +1,6 @@
 #!/bin/bash
 
-kubectl create -f rcss.yml
+kubectl create -f helloworld-rc.yml
 
 kubectl get pods
 kubectl get rc

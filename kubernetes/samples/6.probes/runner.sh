@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kubectl create -f 5.probes.yml && watch -n1 kubectl get pods
+kubectl create -f helloworld-pod.yml && watch -n1 kubectl get pods

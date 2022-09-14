@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hpa-example
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hpa-example
+  template:
+    metadata:
+      labels:
+        app: hpa-example
+    spec:
+      containers:
+        - name: hpa-example
+          image: gcr.io/google_containers/hpa-example
+          ports:
+            - name: http-port
+              containerPort: 80
+          resources:
+            requests:
+              cpu: 200m

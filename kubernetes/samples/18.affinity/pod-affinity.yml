@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-affinity-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pod-affinity-1
+  template:
+    metadata:
+      labels:
+        app: pod-affinity-1
+    spec:
+      containers:
+        - name: k8s-demo
+          image: wardviaene/k8s-demo
+          ports:
+            - name: nodejs-port
+              containerPort: 3000
+          resources:
+            limits:
+              memory: 200Mi
+              cpu: 200m
+            requests:
+              memory: 160Mi
+              cpu: 60m
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-affinity-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pod-affinity-2
+  template:
+    metadata:
+      labels:
+        app: pod-affinity-2
+    spec:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: "app"
+                    operator: In
+                    values:
+                      - pod-affinity-1
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: redis
+          image: redis
+          ports:
+            - name: redis-port
+              containerPort: 6379
+          resources:
+            limits:
+              memory: 200Mi
+              cpu: 200m
+            requests:
+              memory: 160Mi
+              cpu: 60m

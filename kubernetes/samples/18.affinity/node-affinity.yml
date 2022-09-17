@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-affinity
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-affinity
+  template:
+    metadata:
+      labels:
+        app: node-affinity
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: env
+                    operator: In
+                    values:
+                      - dev
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: team
+                    operator: In
+                    values:
+                      - engineering-project1
+      containers:
+        - name: k8s-demo
+          image: wardviaene/k8s-demo
+          ports:
+            - name: nodejs-port
+              containerPort: 3000
+          resources:
+            limits:
+              memory: 200Mi
+              cpu: 200m
+            requests:
+              memory: 160Mi
+              cpu: 60m

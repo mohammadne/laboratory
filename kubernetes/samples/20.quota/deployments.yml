@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-no-quota
+  namespace: myspace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+        - name: k8s-demo
+          image: wardviaene/k8s-demo
+          ports:
+            - name: nodejs-port
+              containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-with-quota
+  namespace: myspace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+        - name: k8s-demo
+          image: wardviaene/k8s-demo
+          ports:
+            - name: nodejs-port
+              containerPort: 3000
+          resources:
+            requests:
+              cpu: 200m
+              memory: 0.5Gi
+            limits:
+              cpu: 400m
+              memory: 1Gi

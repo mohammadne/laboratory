@@ -41,6 +41,6 @@ kubectl run -it --image=busybox --rm=true --restart=Never busybox-testing -- sh
 kubectl logs helloworld-deployment-id 
 # connection to db established
 
-# hit node-js app from local computer
+# hit node-js app from local computer (local:pod)
 kubectl port-forward service/helloworld-service 8080:3000
 curl localhost:8080

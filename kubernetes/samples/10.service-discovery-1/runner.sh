@@ -1,6 +1,6 @@
 #!/bin/bash
 
-kubectl run -it --image=busybox --rm=true testing-busybox -- sh
+kubectl run -it --image=nicolaka/netshoot --rm=true netshoot -- bash
 
 # get actual IP of the pod
 hostname -I
@@ -8,7 +8,7 @@ hostname -I
 
 # display the system's DNS name
 hostname 
-# testing-busybox
+# netshoot
 
 # show dns-server or nameserver (option 1)
 cat /etc/resolv.conf 
@@ -20,6 +20,8 @@ cat /etc/resolv.conf
 nslookup google.com
 # Server:		172.30.0.10
 # Address:	172.30.0.10:53
+
+ping 172.30.0.10 -Pn
 
 # show dns-server or nameserver (option 3)
 kubectl get service -n kube-system kube-dns

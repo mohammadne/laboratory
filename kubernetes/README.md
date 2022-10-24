@@ -1,9 +1,5 @@
 # Kubernetes
 
-## useful repositories
-
-- [wardviaene kubernetes-course](https://github.com/wardviaene/kubernetes-course)
-
 ## Books
 
 - Kubernetes in Action

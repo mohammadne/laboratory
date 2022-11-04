@@ -53,3 +53,69 @@
 
 - cncfcon
 - kubeconf
+
+## materials
+
+### control plane
+
+- kubelet
+- authN
+- authZ
+- mutation webhook
+- admission webhook
+- admission workflow
+- etcd watch
+- api server watch
+- controller pattern and workflow
+- scheduling pipeline
+
+### runtime
+
+- cri
+- kubelet watch
+- cri grpc call
+- crio
+- oci
+- runc
+- lib/image
+- lib/container
+- conmon
+- infra (pause) container
+- pod sandbox
+- cgroup
+- namespaces
+- chroot
+- pivot-root
+
+### networking
+
+- kube-proxy
+- service (clusterip, loadbalancer, node port)
+- iptables chains
+- cni (routing)
+- overlay network (vxlan) flannel
+- bgp based (cilium, calico)
+- ingress controller
+- dns, kubelet dns, dnsPolicy, coredns
+- life of a packet (North south, East West)
+
+### storage
+
+- pv
+- pvc
+- csi
+- csi provisioner
+- csi driver
+- csi attacher/resizer/snapshotter
+- a/d controller
+- Life of a PVC
+- kubelet fsGroup policy
+- kubelet selinux relabling
+
+### others
+
+- ceph, openstack
+
+- linux: lpic1
+
+- network+, cnna routing & switching

@@ -58,7 +58,7 @@
 
 ### control plane
 
-- kubelet
+- [kubelet](https://aws.plainenglish.io/kubernetes-deep-dive-kubelet-e4527ed56f4c)
 - authN
 - authZ
 - mutation webhook
@@ -71,21 +71,24 @@
 
 ### runtime
 
-- cri
-- kubelet watch
+- [cri](https://www.aquasec.com/cloud-native-academy/container-security/container-runtime-interface/)
 - cri grpc call
-- crio
-- oci
-- runc
+- [oci](https://phoenixnap.com/kb/docker-vs-containerd-vs-cri-o)
+- [crio](https://cri-o.io/)
+- [containerd](https://earthly.dev/blog/containerd-vs-docker/)
+- [LXC](https://earthly.dev/blog/lxc-vs-docker/)
+- [runc](https://stackoverflow.com/questions/41645665/how-containerd-compares-to-runc)
 - lib/image
 - lib/container
-- conmon
-- infra (pause) container
+- [kubelet watch](https://aws.plainenglish.io/kubernetes-deep-dive-kubelet-e4527ed56f4c)
+- [conmon](https://github.com/containers/conmon)
+- [infra (pause) container](https://blog.devgenius.io/k8s-pause-container-f7abd1e9b488)
 - pod sandbox
 - cgroup
 - namespaces
 - chroot
 - pivot-root
+- [hypervisor](https://www.virtasant.com/blog/hypervisors-a-comprehensive-guide)
 
 ### networking
 

@@ -1,5 +1,9 @@
 # Kubernetes
 
+## slides
+
+- [Cloud Native Certified Kubernetes Administrator](https://lucid.app/lucidchart/b1b62a6e-1266-41dd-b48d-3c44252fb88f/view)
+
 ## tutorials
 
 - [k8s networking](https://kube.academy/courses/networking-in-kubernetes)
@@ -7,8 +11,6 @@
 - [k8s architecture](https://kube.academy/courses/kubernetes-in-depth/)
 
 - [Kubernetes Deep Dive](https://acloudguru.com/course/kubernetes-deep-dive)
-
-- [Cloud Native Certified Kubernetes Administrator](https://lucid.app/lucidchart/b1b62a6e-1266-41dd-b48d-3c44252fb88f/view)
 
 - [authN and authZ](https://faun.pub/how-to-add-an-user-to-a-kubernetes-cluster-an-overview-of-authn-in-k8s-d198adc08119)
 

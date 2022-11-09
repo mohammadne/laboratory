@@ -6,6 +6,8 @@
 
 ## tutorials
 
+- [kubernetes networking series](https://www.youtube.com/playlist?list=PLSAko72nKb8QWsfPpBlsw-kOdMBD7sra-)
+
 - [k8s networking](https://kube.academy/courses/networking-in-kubernetes)
 
 - [k8s architecture](https://kube.academy/courses/kubernetes-in-depth/)

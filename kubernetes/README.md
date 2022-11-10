@@ -2,15 +2,15 @@
 
 ## slides
 
-- [Cloud Native Certified Kubernetes Administrator *](https://lucid.app/lucidchart/b1b62a6e-1266-41dd-b48d-3c44252fb88f/view)
+- [Cloud Native Certified Kubernetes Administrator](https://lucid.app/lucidchart/b1b62a6e-1266-41dd-b48d-3c44252fb88f/view)
 
 ## tutorials
 
-- [container networking *](https://dustinspecker.com/series/)
+- [container networking](https://dustinspecker.com/series/)
 
-- [kubernetes networking series *](https://www.youtube.com/playlist?list=PLSAko72nKb8QWsfPpBlsw-kOdMBD7sra-)
+- [kubernetes networking series](https://www.youtube.com/playlist?list=PLSAko72nKb8QWsfPpBlsw-kOdMBD7sra-), the code are at [github](https://github.com/gary-RR/myYouTube-video-kubernetes-services)
 
-- [k8s iptable chains *](https://examples.openshift.pub/networking/k8s-iptables-chains/)
+- [k8s iptable chains](https://examples.openshift.pub/networking/k8s-iptables-chains/)
 
 - [Kubernetes Deep Dive](https://acloudguru.com/course/kubernetes-deep-dive)
 

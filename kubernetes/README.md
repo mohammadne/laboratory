@@ -6,9 +6,9 @@
 
 ## tutorials
 
-- [container networking](https://dustinspecker.com/series/)
+- [container networking *](https://dustinspecker.com/series/)
 
-- [kubernetes networking series](https://www.youtube.com/playlist?list=PLSAko72nKb8QWsfPpBlsw-kOdMBD7sra-), the code are at [github](https://github.com/gary-RR/myYouTube-video-kubernetes-services)
+- [kubernetes networking series](https://www.youtube.com/playlist?list=PLSAko72nKb8QWsfPpBlsw-kOdMBD7sra-), the code are at [github](https://github.com/gary-RR/)
 
 - [k8s iptable chains](https://examples.openshift.pub/networking/k8s-iptables-chains/)
 

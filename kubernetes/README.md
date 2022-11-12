@@ -8,7 +8,11 @@
 
 - [container networking *](https://dustinspecker.com/series/)
 
-- [kubernetes networking series](https://www.youtube.com/playlist?list=PLSAko72nKb8QWsfPpBlsw-kOdMBD7sra-), the code are at [github](https://github.com/gary-RR/)
+- [kubernetes-networking-model](https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/) and other posts of [sookocheff](https://sookocheff.com/)
+
+- [calico series](https://projectcalico.docs.tigera.io/about/about-calico)
+
+- [kubernetes networking series](https://www.youtube.com/playlist?list=PLSAko72nKb8QWsfPpBlsw-kOdMBD7sra-), the code are [here](https://github.com/gary-RR/)
 
 - [k8s iptable chains](https://examples.openshift.pub/networking/k8s-iptables-chains/)
 
@@ -18,6 +22,7 @@
 
 ## Books
 
+- [Core Kubernetes](https://www.manning.com/books/core-kubernetes)
 - Kubernetes in Action
 - Kubernetes: Up and Running, 3rd Edition
 - Kubernetes Patterns: Reusable Elements for Designing Cloud-Native Applications

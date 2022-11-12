@@ -130,4 +130,22 @@
 
 - linux: lpic1
 
+- Ansible 
+- Terraform
+
 - network+, cnna routing & switching
+
+---
+
+Openshift-OKD
+Openstack
+
+CSI
+CNI, Cilium, HAProxy, Ingress controllers, keepalived, Metallb
+CRI, CRI-O, Runc, Docker, podman-buildah-skopeo
+
+Helm
+Prometheus, ELK, Fluentd
+Ceph
+KVM-QEMU,   Openstack (Nova, Cinder, Glance, keystone, Ironic,...)
+FCOS, Ignition

@@ -6,13 +6,7 @@
 
 ## tutorials
 
-- [container networking *](https://dustinspecker.com/series/)
-
-- [kubernetes-networking-model](https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/) and other posts of [sookocheff](https://sookocheff.com/)
-
 - [calico series](https://projectcalico.docs.tigera.io/about/about-calico)
-
-- [kubernetes networking series](https://www.youtube.com/playlist?list=PLSAko72nKb8QWsfPpBlsw-kOdMBD7sra-), the code are [here](https://github.com/gary-RR/)
 
 - [k8s iptable chains](https://examples.openshift.pub/networking/k8s-iptables-chains/)
 
@@ -126,26 +120,13 @@
 
 ### others
 
-- ceph, openstack
-
+- ceph, openstack (Nova, Cinder, Glance, keystone, Ironic,...), Openshift-OKD
 - linux: lpic1
-
-- Ansible 
-- Terraform
-
+- Ansible, Terraform
 - network+, cnna routing & switching
-
----
-
-Openshift-OKD
-Openstack
-
-CSI
-CNI, Cilium, HAProxy, Ingress controllers, keepalived, Metallb
-CRI, CRI-O, Runc, Docker, podman-buildah-skopeo
-
-Helm
-Prometheus, ELK, Fluentd
-Ceph
-KVM-QEMU,   Openstack (Nova, Cinder, Glance, keystone, Ironic,...)
-FCOS, Ignition
+- keepalived, Metallb
+- HAProxy, Nginx
+- Helm
+- Prometheus, ELK, Fluentd
+- KVM-QEMU
+- FCOS, Ignition

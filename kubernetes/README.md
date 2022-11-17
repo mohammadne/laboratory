@@ -1,10 +1,8 @@
 # Kubernetes
 
-## slides
+## tutorials
 
 - [Cloud Native Certified Kubernetes Administrator](https://lucid.app/lucidchart/b1b62a6e-1266-41dd-b48d-3c44252fb88f/view)
-
-## tutorials
 
 - [calico series](https://projectcalico.docs.tigera.io/about/about-calico)
 

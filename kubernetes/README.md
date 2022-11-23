@@ -4,6 +4,8 @@
 
 - [Cloud Native Certified Kubernetes Administrator](https://lucid.app/lucidchart/b1b62a6e-1266-41dd-b48d-3c44252fb88f/view)
 
+- [qdnqn](https://qdnqn.com/)
+
 - [calico series](https://projectcalico.docs.tigera.io/about/about-calico)
 
 - [k8s iptable chains](https://examples.openshift.pub/networking/k8s-iptables-chains/)

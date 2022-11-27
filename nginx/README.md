@@ -5,6 +5,10 @@
 docker compose stop && docker compose rm -f && docker compose up -d
 ```
 
+## tutorials
+
+- <https://www.whizlabs.com/blog/nginx-tutorial-for-beginners/>
+
 ## reverse-proxy
 
 - in this scenario we have a reverse proxy in front of a backend service and proxy the request to our backend and respond to the client via his/her request uri

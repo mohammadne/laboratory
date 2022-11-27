@@ -1,5 +1,9 @@
 # Ansible
 
+## tutorials
+
+- <https://medium.com/edureka/ansible-tutorial-9a6794a49b23>
+
 ## setup
 
 ``` bash
@@ -28,3 +32,7 @@ vi ~/.ssh/authorized_keys
 # issue the ping command to the slave to test the connection
 ansible webapp -i hosts -m command -a hostname  -u slave
 ```
+
+## scenarios
+
+1. apache2

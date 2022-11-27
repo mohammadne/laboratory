@@ -27,4 +27,4 @@ vi ~/.ssh/authorized_keys
 
 # issue the ping command to the slave to test the connection
 ansible webapp -i hosts -m command -a hostname  -u slave
-``` 
+```

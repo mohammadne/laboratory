@@ -5,6 +5,9 @@
 > link to the [log](https://github.com/InsightDataScience/Parsing-Workshop/blob/master/exercises/analyzing_apache-logs/apache_logs.txt) file.
 
 ``` bash
+# download the logs
+curl -L -o apache_logs.txt https://raw.githubusercontent.com/InsightDataScience/Parsing-Workshop/master/exercises/analyzing_apache-logs/apache_logs.txt
+
 # get first 10 logs 
 head apache_logs.txt -n 10
 

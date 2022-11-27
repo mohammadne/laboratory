@@ -7,7 +7,7 @@ docker compose stop && docker compose rm -f && docker compose up -d
 
 ## reverse-proxy
 
-- in this scenario we have a reverse proxy in fron of a backend service and proxy the request to our backend and respond to the client via his/her request uri
+- in this scenario we have a reverse proxy in front of a backend service and proxy the request to our backend and respond to the client via his/her request uri
 
 ``` bash
 # curl to the reverse-proxy container
@@ -30,7 +30,7 @@ curl localhost:8000/custon-name/devops
 
 - in this scenario we have a reverse proxy in fron of a 2 backend services and proxy the request to our backends based on the defined upstream
 
-- here we used `static ip` in compose file to use them in loadbalancing 
+- here we used `static ip` in compose file to use them in loadbalancing.
 
 ``` bash
 # hit the load balancer

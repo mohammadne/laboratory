@@ -1,5 +1,11 @@
 # Networking
 
+## books
+
+- Computer Networking: A Top-Down Approach
+
+- Linux iptables Pocket Reference - Gregor N. Purdy
+
 ## resources
 
 - linux networking (lpic series)

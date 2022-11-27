@@ -14,8 +14,6 @@
 
 - [Kubernetes Deep Dive](https://acloudguru.com/course/kubernetes-deep-dive)
 
-- [authN and authZ](https://faun.pub/how-to-add-an-user-to-a-kubernetes-cluster-an-overview-of-authn-in-k8s-d198adc08119)
-
 ## Books
 
 - [Core Kubernetes](https://www.manning.com/books/core-kubernetes)
@@ -64,13 +62,11 @@
 ### control plane
 
 - [kubelet](https://aws.plainenglish.io/kubernetes-deep-dive-kubelet-e4527ed56f4c)
-- authN
-- authZ
-- mutation webhook
-- admission webhook
-- admission workflow
+- [authN and authZ](https://faun.pub/how-to-add-an-user-to-a-kubernetes-cluster-an-overview-of-authn-in-k8s-d198adc08119)
+- [kuberntes operators](https://developer.ibm.com/learningpaths/kubernetes-operators/operators-extend-kubernetes/)
+- [mutating and validating admission webhook](https://slack.engineering/simple-kubernetes-webhook/)
 - etcd watch
-- api server watch
+- [api server watch](https://sysdig.com/blog/monitor-kubernetes-api-server/)
 - controller pattern and workflow
 - scheduling pipeline
 
@@ -94,6 +90,7 @@
 - chroot
 - pivot-root
 - [hypervisor](https://www.virtasant.com/blog/hypervisors-a-comprehensive-guide)
+- [sidecar container](https://www.containiq.com/post/kubernetes-sidecar-container)
 
 ### networking
 
@@ -132,3 +129,4 @@
 - Prometheus, ELK, Fluentd
 - KVM-QEMU
 - FCOS, Ignition
+- [Istio](https://tetrate.io/what-is-istio-service-mesh/)

@@ -85,10 +85,10 @@
 - [conmon](https://github.com/containers/conmon)
 - [infra (pause) container](https://blog.devgenius.io/k8s-pause-container-f7abd1e9b488)
 - pod sandbox
-- cgroup
+- [cgroup](https://www.nginx.com/blog/what-are-namespaces-cgroups-how-do-they-work/)
 - namespaces
-- chroot
-- pivot-root
+- [chroot](https://www.howtogeek.com/441534/how-to-use-the-chroot-command-on-linux/)
+- [pivot-root](https://superuser.com/questions/1575316/usage-of-chroot-after-pivot-root)
 - [hypervisor](https://www.virtasant.com/blog/hypervisors-a-comprehensive-guide)
 - [sidecar container](https://www.containiq.com/post/kubernetes-sidecar-container)
 
@@ -98,8 +98,8 @@
 - service (clusterip, loadbalancer, node port)
 - iptables chains
 - cni (routing)
-- overlay network (vxlan) flannel
-- bgp based (cilium, calico)
+- [overlay network (vxlan) flannel](https://community.arm.com/arm-community-blogs/b/tools-software-ides-blog/posts/understanding-and-deploying-overlay-networks)
+- [bgp based (cilium, calico)](https://www.ibm.com/docs/en/cloud-private/3.2.0?topic=ins-calico)
 - ingress controller
 - dns, kubelet dns, dnsPolicy, coredns
 - life of a packet (North south, East West)

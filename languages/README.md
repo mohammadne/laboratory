@@ -4,7 +4,7 @@
 
 ``` bash
 sudo dnf install golang -y
-go env -w GOPATH=$HOME/.local/share/go
+go env -w GOPATH=$HOME/.go
 go env -w GOPROXY="https://goproxy.io,https://goproxy.cn,direct"
 ```
 

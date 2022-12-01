@@ -7,8 +7,17 @@
 1. installation
 
     ``` bash
+    # old
     sudo dnf install gcc libvirt libvirt-devel libxml2-devel make ruby-devel -y
-    sudo dnf install virt-manager -y # KVM management GUI
+
+    # required virtualization packages
+    sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm
+
+    # tools for virtual machine management
+    sudo dnf install libvirt-devel virt-top libguestfs-tools guestfs-tools
+
+    # install KVM management GUI
+    sudo dnf install virt-manager -y
 
     sudo systemctl start libvirtd
     sudo systemctl enable libvirtd
@@ -38,6 +47,30 @@
 
     # destroy machine after usage
     vagrant destroy
+    ```
+
+- failure (delete vm manually)
+
+    ``` bash
+    # get the machine name
+    sudo virsh list --all
+    
+    # destroy and undefine machine
+    sudo virsh destroy <THE_MACHINE>
+    sudo virsh undefine <THE_MACHINE>
+    
+    # get the volume name
+    sudo virsh vol-list default
+
+    # delete machine's volume
+    sudo virsh vol-delete --pool default <THE_VOLUME>
+    ```
+
+- restore vagrant bridge (if you delete it)
+
+    ``` bash
+    sudo systemctl restart libvirtd
+    sudo virsh net-start default
     ```
 
 ## MacOS

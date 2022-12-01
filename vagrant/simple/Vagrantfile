@@ -1,0 +1,35 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
+
+Vagrant.configure("2") do |config|
+  
+  config.vm.define :sandbox do |config|
+    config.vm.box = "generic/ubuntu2204"
+    config.vm.box_check_update = false
+
+    # config.vm.network :private_network, :ip => '10.20.30.40'
+    # config.vm.network :public_network, :ip => '10.20.30.41'
+  
+    # config.vm.synced_folder "./data", "/home/vagrant/data"
+
+    config.vm.provider :libvirt do |domain|
+      domain.memory = 1024
+      domain.cpus = 1
+    end
+  end
+  
+  config.vm.provider :libvirt do |libvirt|
+    libvirt.default_prefix = ''
+
+    # libvirt.connect_via_ssh = false
+
+    # libvirt.host = "ubuntu"
+
+    libvirt.driver = "kvm"
+
+    # libvirt.username = "root"
+    # libvirt.password = "password"
+  end
+end

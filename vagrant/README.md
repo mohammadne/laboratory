@@ -33,6 +33,9 @@
     # use no-parallel for a bug in multi-boxes
     vagrant up --no-parallel
 
+    # for docker provider
+    sudo vagrant up
+
     # destroy machine after usage
     vagrant destroy
     ```

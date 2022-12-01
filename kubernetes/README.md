@@ -1,5 +1,18 @@
 # Kubernetes
 
+## installation
+
+1. [install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+
+2. [install oc](https://console.redhat.com/openshift/downloads)
+
+    ``` bash
+    wget https://github.com/okd-project/okd/releases/download/4.11.0-0.okd-2022-08-20-022919/openshift-client-linux-4.11.0-0.okd-2022-08-20-022919.tar.gz
+    tar -xvf openshift-client-linux-4.11.0-0.okd-2022-08-20-022919.tar.gz
+    sudo mv oc /usr/local/bin/
+    oc version
+    ```
+
 ## tutorials
 
 - [Cloud Native Certified Kubernetes Administrator](https://lucid.app/lucidchart/b1b62a6e-1266-41dd-b48d-3c44252fb88f/view)
@@ -18,6 +31,7 @@
 
 - [Core Kubernetes](https://www.manning.com/books/core-kubernetes)
 - Kubernetes in Action
+- The Kubernetes Operator Framework Book
 - Kubernetes: Up and Running, 3rd Edition
 - Kubernetes Patterns: Reusable Elements for Designing Cloud-Native Applications
 - Kubernetes Best Practices

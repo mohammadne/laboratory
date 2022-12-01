@@ -1,0 +1,40 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
+
+Vagrant.require_version ">= 2.2.8"
+Vagrant.configure("2") do |config|
+  servers=[
+    { :hostname => "server-1", :ip => "172.16.1.51", :ssh_port => '2201' },
+    { :hostname => "server-2", :ip => "172.16.1.52", :ssh_port => '2202' }
+  ]
+
+  servers.each do |server|
+    config.vm.define server[:hostname] do |node|
+      node.vm.box = "generic/ubuntu2204"
+      # node.vm.hostname = server[:hostname]
+      # node.vm.network :private_network, ip: server[:ip]
+      # node.vm.network "forwarded_port", guest: 22, host: server[:ssh_port], id: "ssh"
+      # node.vm.synced_folder "../data", "/home/vagrant/data"
+
+      node.vm.provider :libvirt do |domain|
+        # domain.qemu_use_session = false
+          domain.memory = 1024
+          domain.cpus = 1
+      end
+    end
+    
+    config.vm.provider :libvirt do |libvirt|
+      libvirt.default_prefix = ''
+      libvirt.driver = "kvm"
+  
+      # libvirt.connect_via_ssh = false
+  
+      # libvirt.host = "ubuntu"
+  
+      # libvirt.username = "root"
+      # libvirt.password = "password"
+    end
+  end
+end

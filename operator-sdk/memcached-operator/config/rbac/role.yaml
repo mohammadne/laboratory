@@ -37,4 +37,21 @@ rules:
       - patch
       - update
       - watch
+  ##
+  ## Rules for cache.example.com/v1alpha1, Kind: Memcached
+  ##
+  - apiGroups:
+      - cache.example.com
+    resources:
+      - memcacheds
+      - memcacheds/status
+      - memcacheds/finalizers
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
 #+kubebuilder:scaffold:rules

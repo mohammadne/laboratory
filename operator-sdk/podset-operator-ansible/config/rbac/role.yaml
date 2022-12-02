@@ -37,4 +37,21 @@ rules:
       - patch
       - update
       - watch
+  ##
+  ## Rules for app.example.com/v1alpha1, Kind: PodSet
+  ##
+  - apiGroups:
+      - app.example.com
+    resources:
+      - podsets
+      - podsets/status
+      - podsets/finalizers
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
 #+kubebuilder:scaffold:rules

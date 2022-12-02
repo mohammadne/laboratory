@@ -57,8 +57,8 @@ func (r *PodSetReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctr
 	log := ctrllog.FromContext(ctx)
 
 	// Fetch the PodSet instance
-	instance := &appv1alpha1.PodSet{}
-	err := r.Get(context.TODO(), req.NamespacedName, instance)
+	podSet := &appv1alpha1.PodSet{}
+	err := r.Get(context.TODO(), req.NamespacedName, podSet)
 	if err != nil {
 		if errors.IsNotFound(err) {
 			// Request object not found, could have been deleted after reconcile request.
@@ -72,13 +72,9 @@ func (r *PodSetReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctr
 	}
 
 	// List all pods owned by this PodSet instance
-	podSet := instance
 	podList := &corev1.PodList{}
-	lbs := map[string]string{
-		"app":     podSet.Name,
-		"version": "v0.1",
-	}
-	labelSelector := labels.SelectorFromSet(lbs)
+	lables := map[string]string{"app": podSet.Name, "version": "v0.1"}
+	labelSelector := labels.SelectorFromSet(lables)
 	listOps := &client.ListOptions{Namespace: podSet.Namespace, LabelSelector: labelSelector}
 	if err = r.List(context.TODO(), podList, listOps); err != nil {
 		return ctrl.Result{}, err
@@ -105,6 +101,7 @@ func (r *PodSetReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctr
 		PodNames:          availableNames,
 		AvailableReplicas: numAvailable,
 	}
+
 	if !reflect.DeepEqual(podSet.Status, status) {
 		podSet.Status = status
 		err = r.Status().Update(context.TODO(), podSet)

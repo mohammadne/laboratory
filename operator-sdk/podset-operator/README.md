@@ -1,10 +1,10 @@
-# podset-operator
+# podset operator
 
-// TODO(user): Add simple overview of use/purpose
+podset operator is an operator to demystify the kubernetes operators and to get an overview of the operators developed by `operator framework`.
 
 ## Description
 
-// TODO(user): An in-depth paragraph about your project and overview of use
+podset operator behaves very like the replica-set, created for learning purposes.
 
 ## Getting Started
 
@@ -31,50 +31,35 @@ make manifest
 
 # make changes to the controller
 vim controllers/podset_controller.go
-```
 
-### Running on the cluster
-
-1. Install Instances of Custom Resources:
-
-    ```sh
-    kubectl apply -f config/samples/
-    ```
-
-2. Build and push your image to the location specified by `IMG`:
-
-    ```sh
-    make docker-build docker-push IMG=<some-registry>/podset-operator:tag
-    ```
-
-3. Deploy the controller to the cluster with the image specified by `IMG`:
-
-    ```sh
-    make deploy IMG=<some-registry>/podset-operator:tag
-    ```
-
-### Uninstall CRDs
-
-To delete the CRDs from the cluster:
-
-```sh
+# run operator locally outside the cluster
+make install run # first terminal
+kubectl create -f config/samples/app_v1alpha1_podset.yaml # second terminal
+kubectl get podset
+kubectl get podset podset-sample -o yaml
+kubectl get pods podset-sample-podqzwql -o yaml | grep ownerReferences -A5
+kubectl patch podset podset-sample --type='json' -p '[{"op": "replace", "path": "/spec/replicas", "value": 5}]'
+kubectl get pods
+kubectl delete podsets.app.example.com podset-sample
 make uninstall
-```
 
-### Undeploy controller
+# push operator image to registry
+vim Makefile # update IMAGE_TAG_BASE
+make docker-build docker-push
 
-UnDeploy the controller to the cluster:
-
-```sh
+# run operator inside the cluster
+make deploy
+kubectl apply -f config/samples/app_v1alpha1_podset.yaml
 make undeploy
+
 ```
 
 ### How it works
 
 This project aims to follow the Kubernetes [Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
 
-It uses [Controllers](https://kubernetes.io/docs/concepts/architecture/controller/) 
-which provides a reconcile function responsible for synchronizing resources untile the desired state is reached on the cluster 
+It uses [Controllers](https://kubernetes.io/docs/concepts/architecture/controller/)
+which provides a reconcile function responsible for synchronizing resources untile the desired state is reached on the cluster.
 
 ### Test It Out
 

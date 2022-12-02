@@ -1,6 +1,6 @@
 # podset operator
 
-podset operator is an operator to demystify the kubernetes operators and to get an overview of the operators developed by `operator framework`.
+podset operator is a golang operator to demystify the kubernetes operators and to get an overview of the operators developed by `operator framework`.
 
 ## Description
 

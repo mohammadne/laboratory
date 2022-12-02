@@ -9,4 +9,4 @@ metadata:
     app.kubernetes.io/created-by: memcached-operator
   name: memcached-sample
 spec:
-  # TODO(user): Add fields here
+  size: 3

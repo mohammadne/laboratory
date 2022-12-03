@@ -20,6 +20,12 @@
 
 - both ansible and terraform are agentless, they don't require installing agent software on target servers.
 
+``` tf
+resource "<provider>_<resource_type>" "<name>" {
+    config options ....
+}
+```
+
 ## Architecture
 
 1. `Core`: what to create and configure + the state of the setup, it checks the current state and detrmine what needs to be done to achieve the desired state.

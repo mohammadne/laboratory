@@ -11,3 +11,7 @@ mv secrets.tfvars.example secrets.tfvars && vim secrets.tfvars
 terraform init
 terraform apply -var-file="secrets.tfvars"
 ```
+
+## resources
+
+- <https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html>

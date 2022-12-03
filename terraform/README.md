@@ -38,3 +38,7 @@ resource "<provider>_<resource_type>" "<name>" {
 - `plan`: create an execution plan.
 - `apply`: execute the plan.
 - `destroy`: destroy infrastructure and resources.
+
+## resources
+
+- <https://github.com/ahmadalibagheri/terraform-tutorial>

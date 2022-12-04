@@ -16,7 +16,7 @@ func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 func main() {
 	app := cdktf.NewApp(nil)
 
-	NewMyStack(app, "aws")
+	NewMyStack(app, "aws-ec2")
 
 	app.Synth()
 }

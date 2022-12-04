@@ -1,22 +1,15 @@
 package main
 
 import (
-	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
+
+	"github.com/mohammadne/laboratory/cdktf/aws-ec2/internal"
 )
-
-func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
-	stack := cdktf.NewTerraformStack(scope, &id)
-
-	// The code that defines your stack goes here
-
-	return stack
-}
 
 func main() {
 	app := cdktf.NewApp(nil)
 
-	NewMyStack(app, "aws-ec2")
+	internal.NewStack(app, "aws-ec2")
 
 	app.Synth()
 }

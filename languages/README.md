@@ -22,3 +22,9 @@ sudo dnf install python3 -y
 python -m pip install --upgrade pip # install pip package manager
 pip install --upgrade autopep8
 ```
+
+## nodejs
+
+``` bash
+sudo dnf install npm -y
+```

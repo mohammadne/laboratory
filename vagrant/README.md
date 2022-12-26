@@ -1,5 +1,7 @@
 # Vagrant
 
+- <https://stackoverflow.com/questions/60907105/what-is-the-difference-between-qemu-kvm-libvirt-and-how-to-use-with-vagrant>
+
 ## Fedora (libvirt KVM)
 
 > virtual machine manager + kvm + QMUE will give you the hypervisor type 1

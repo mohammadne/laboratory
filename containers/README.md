@@ -1,6 +1,6 @@
-# Container Networking
+# Containers
 
-this tutorial is based on
+## Container Networking
 
 - [container networking](https://dustinspecker.com/series/)
 

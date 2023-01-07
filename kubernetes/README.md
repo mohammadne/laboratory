@@ -27,6 +27,10 @@
 
 - [Kubernetes Deep Dive](https://acloudguru.com/course/kubernetes-deep-dive)
 
+- [kubernetes-networking-model](https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/) and other posts of [sookocheff](https://sookocheff.com/)
+
+- [kubernetes networking series](https://www.youtube.com/playlist?list=PLSAko72nKb8QWsfPpBlsw-kOdMBD7sra-), the code are [here](https://github.com/gary-RR/)
+
 ## Books
 
 - [Core Kubernetes](https://www.manning.com/books/core-kubernetes)

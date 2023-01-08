@@ -9,3 +9,7 @@
 ## Networking
 
 - [container networking](https://dustinspecker.com/series/)
+
+## registry
+
+- [harbor](https://www.youtube.com/watch?v=REgvBPH369M)

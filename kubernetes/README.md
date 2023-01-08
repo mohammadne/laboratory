@@ -1,18 +1,5 @@
 # Kubernetes
 
-## installation
-
-1. [install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-
-2. [install oc](https://console.redhat.com/openshift/downloads)
-
-    ``` bash
-    wget https://github.com/okd-project/okd/releases/download/4.11.0-0.okd-2022-08-20-022919/openshift-client-linux-4.11.0-0.okd-2022-08-20-022919.tar.gz
-    tar -xvf openshift-client-linux-4.11.0-0.okd-2022-08-20-022919.tar.gz
-    sudo mv oc /usr/local/bin/
-    oc version
-    ```
-
 ## tutorials
 
 - [Cloud Native Certified Kubernetes Administrator](https://lucid.app/lucidchart/b1b62a6e-1266-41dd-b48d-3c44252fb88f/view)
@@ -30,6 +17,8 @@
 - [kubernetes-networking-model](https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/) and other posts of [sookocheff](https://sookocheff.com/)
 
 - [kubernetes networking series](https://www.youtube.com/playlist?list=PLSAko72nKb8QWsfPpBlsw-kOdMBD7sra-), the code are [here](https://github.com/gary-RR/)
+
+- [troubleshooting](https://learnk8s.io/troubleshooting-deployments)
 
 ## Books
 
@@ -114,6 +103,7 @@
 
 - kube-proxy
 - service (clusterip, loadbalancer, node port)
+- [sidecar tcpdump](https://medium.com/@rakhitharr/debug-network-traffic-in-kubernetes-using-a-sidecar-fd1671d8a35b)
 - iptables chains
 - cni (routing)
 - [overlay network (vxlan) flannel](https://community.arm.com/arm-community-blogs/b/tools-software-ides-blog/posts/understanding-and-deploying-overlay-networks)

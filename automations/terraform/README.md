@@ -42,3 +42,5 @@ resource "<provider>_<resource_type>" "<name>" {
 ## resources
 
 - <https://github.com/ahmadalibagheri/terraform-tutorial>
+
+- <https://www.youtube.com/watch?v=YcJ9IeukJL8>

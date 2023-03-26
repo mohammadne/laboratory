@@ -1,28 +1,22 @@
-variable "token" {
-  sensitive = true # Requires terraform >= 0.14
-  default   = ""
-}
-
-provider "hcloud" {
-  token = var.token
-}
-
 resource "hcloud_ssh_key" "default" {
   name       = "default ssh key"
-  public_key = file("~/.ssh/hetzner_ed.pub")
+  public_key = file("~/.ssh/hetzner_ed25519.pub")
 }
 
-resource "hcloud_server" "test" {
-  name        = "node1"
-  image       = "fedora-37"
-  server_type = "cx11"
-  ssh_keys    = [hcloud_ssh_key.default.name]
-  public_net {
-    ipv4_enabled = true
-    ipv6_enabled = true
-  }
+# setup the VM
+resource "hcloud_server" "vpn" {
+  name        = "vpn"
+  image       = var.os_type
+  server_type = var.server_type
+  location    = var.location
+  ssh_keys    = [hcloud_ssh_key.default.id]
 }
 
-output "ipv4" {
-  value = hcloud_server.test.ipv4_address
+
+output "web_server_status" {
+  value = hcloud_server.web.status
+}
+
+output "web_server_ip" {
+  value = hcloud_server.web.ipv4_address
 }

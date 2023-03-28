@@ -17,6 +17,9 @@ You’ll need a Kubernetes cluster to run against. You can use [KIND](https://si
 # scaffold project
 operator-sdk init --project-name podset-operator --domain=example.com --repo=github.com/mohammadne/sandbox/podset-operator
 
+# https://book.kubebuilder.io/migration/multi-group.html
+kubebuilder edit --multigroup=true
+
 # create api
 operator-sdk create api --group=app --version=v1alpha1 --kind=PodSet --controller --resource
 

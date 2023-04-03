@@ -18,6 +18,8 @@
 
 - [Cisco CCNA 200-301](https://www.youtube.com/playlist?list=PLF1hDMPPRqGxpYdo0ctaa7MxfOi9vjs1u)
 
+- [Practical Networking](https://www.youtube.com/@PracticalNetworking/playlists)
+
 - [Free CCNA 200-301 | Complete Course 2023](https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ)
 
 - [Full Series | 200-301 CCNA | Free Cisco Video Training 2020](https://www.youtube.com/playlist?list=PLh94XVT4dq02frQRRZBHzvj2hwuhzSByN)

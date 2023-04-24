@@ -111,6 +111,9 @@
 - ingress controller
 - dns, kubelet dns, dnsPolicy, coredns
 - life of a packet (North south, East West)
+- cilium
+  - cluster mesh
+  - hubble
 
 ### storage
 
@@ -124,6 +127,7 @@
 - Life of a PVC
 - kubelet fsGroup policy
 - kubelet selinux relabling
+- [raft consensus algorithm](https://raft.github.io/)
 
 ### others
 

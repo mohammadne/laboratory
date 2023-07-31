@@ -34,21 +34,21 @@ services:
     # depends_on:
     #   - cadvisor
 
-  grafana:
-    image: grafana/grafana:10.0.2
-    user: '472'
-    restart: always
-    environment:
-      GF_INSTALL_PLUGINS: 'grafana-clock-panel,grafana-simple-json-datasource'
-    volumes:
-      - grafana_data:/var/lib/grafana
-      - ./grafana/provisioning/:/etc/grafana/provisioning/
-    env_file:
-      - ./grafana/config.monitoring
-    ports:
-      - 3000:3000
-    depends_on:
-      - prometheus
+  # grafana:
+  #   image: grafana/grafana:10.0.2
+  #   user: '472'
+  #   restart: always
+  #   environment:
+  #     GF_INSTALL_PLUGINS: 'grafana-clock-panel,grafana-simple-json-datasource'
+  #   volumes:
+  #     - grafana_data:/var/lib/grafana
+  #     - ./grafana/provisioning/:/etc/grafana/provisioning/
+  #   env_file:
+  #     - ./grafana/config.monitoring
+  #   ports:
+  #     - 3000:3000
+  #   depends_on:
+  #     - prometheus
 
   # node-exporter:
   #   image: prom/node-exporter:v1.6.0
@@ -80,5 +80,5 @@ services:
 
 volumes:
   prometheus_data: {}
-  grafana_data: {}
+  # grafana_data: {}
 

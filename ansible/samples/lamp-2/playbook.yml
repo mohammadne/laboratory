@@ -1,6 +1,0 @@
-- hosts: lamp
-  become: yes
-  roles:
-    - apache2
-    - mysql
-    - php

@@ -1,0 +1,6 @@
+hostname: "mohammadne.me"
+http_port: 80
+mysql_root_user_password: "{{ vault_mysql_root_user_password }}"
+mysql_wordpress_db: "wordpress"
+mysql_wordpress_user: "wordpress"
+mysql_wordpress_user_password: "{{ vault_mysql_wordpress_user_password }}"

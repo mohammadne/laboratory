@@ -1,0 +1,75 @@
+- name: Download and unpack latest Nginx
+  unarchive:
+    src: https://nginx.org/download/nginx-{{ nginx_version }}.tar.gz
+    dest: "/tmp"
+    remote_src: yes
+    creates: "/tmp/nginx-{{ nginx_version }}"
+
+- name: configure Nginx installation
+  shell: |
+    cd /tmp/nginx-{{ nginx_version }}
+    ./configure \
+      --prefix=/usr/local/nginx \
+      --sbin-path=/usr/local/nginx/sbin/nginx \
+      --conf-path=/etc/nginx/nginx.conf \
+      --modules-path=/etc/nginx/modules \
+      --http-log-path=/var/log/nginx/access.log \
+      --error-log-path=/var/log/nginx/error.log \
+      --lock-path=/var/run/nginx.lock  \
+      --pid-path=/var/run/nginx.pid \
+      --http-client-body-temp-path=/var/cache/nginx/client_temp \
+      --http-proxy-temp-path=/var/cache/nginx/proxy_temp \
+      --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \
+      --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \
+      --http-scgi-temp-path=/var/cache/nginx/scgi_temp \
+      --group=www-data  \
+      --user=www-data  \
+      --with-http_ssl_module \
+      --with-http_stub_status_module \
+      --with-http_gzip_static_module \
+      --with-http_v2_module
+
+- name: Compile nginx source code
+  shell: |
+    cd /tmp/nginx-{{ nginx_version }}
+    make
+
+- name: Install the compiled Nginx source code
+  shell: |
+    cd /tmp/nginx-{{ nginx_version }}
+    make install
+
+- name: Copy nginx.service file
+  copy:
+    src: files/nginx.service  # Replace with the actual path to nginx.service
+    dest: /etc/systemd/system/nginx.service
+  notify:
+    - reload-nginx
+
+- name: Start nginx service
+  service:
+    name: nginx
+    state: started
+
+- name: Get nginx version
+  command: "nginx -v"
+  register: current_nginx_version
+
+# version information is printed to standard error!
+- name: Match desired verion with the installed version
+  assert:
+    that: "'nginx version: nginx/{{ nginx_version }}' in current_nginx_version.stderr"
+    fail_msg: "Nginx version does not match the desired version."
+  any_errors_fatal: true
+
+
+# - hosts: localhost 
+#   tasks: 
+#   - name: List files in /tmp 
+#     command: ls /tmp 
+#     register: list_files 
+
+#   - name: Check if file testfile.txt exists 
+#     assert: 
+#       that: 
+#       - "'testfile.txt' in list_files.stdout_lines" 

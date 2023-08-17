@@ -1,0 +1,4 @@
+---
+nginx_version: 1.24.0 # https://nginx.org/en/download.html
+http_port: 80
+hostname: mohammadne.me

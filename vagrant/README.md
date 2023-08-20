@@ -105,3 +105,9 @@ vagrant plugin install vagrant-libvirt
 - <https://computingforgeeks.com/using-vagrant-with-libvirt-on-linux/>
 
 - <https://opensource.com/article/21/10/vagrant-libvirt>
+
+### possible issues
+
+- <https://github.com/hashicorp/vagrant/issues/12664>
+- <https://github.com/vagrant-libvirt/vagrant-libvirt/issues/658>
+- <https://askubuntu.com/questions/1225216/failed-to-connect-socket-to-var-run-libvirt-libvirt-sock>

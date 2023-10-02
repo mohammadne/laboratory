@@ -1,5 +1,15 @@
 # Prometheus
 
+## installation
+
+### docker compose
+
+### systemd
+
+- [install prometheus](https://www.cherryservers.com/blog/install-prometheus-ubuntu)
+
+- [install pushgateway](https://blog.ruanbekker.com/blog/2019/05/17/install-pushgateway-to-expose-metrics-to-prometheus/)
+
 ## introduction
 
 - prometheus is an open-source monitoring solution & time series database which provides metrics & alerting with a flexible `Query Language`.
@@ -20,13 +30,13 @@
 
 - a single prometheus server is able to ingest up to one milion samples per second as several milion time series.
 
-## concepts
+### concepts
 
 - every time series is identified by a `metric name` and a set of key-value pairs called `labels` like `go_alloc_bytes{instance="localhost",job="worker"}` which `go_alloc_bytes` is metric name and the `{instance="localhost",job="worker"}` are labels.
 
 - time series data also contains actual data called `samples`. (number of times a metric happend)
 
-## configuration
+### configuration
 
 ``` bash
 vim /etc/prometheus/prometheus.yml
@@ -38,7 +48,7 @@ vim /etc/prometheus/prometheus.yml
 
 - the prometheus itself exposes some metrics at `localhost:9090/metrics` and the web console of prometheus is accessible at `localhost:9090`
 
-## node exporter
+### node exporter
 
 - a project owned by prometheus
 
@@ -51,8 +61,8 @@ vim /etc/prometheus/prometheus.yml
     curl localhost:9100/metrics
     ```
 
-## [Architecture](https://github.com/prometheus/prometheus#architecture-overview)
+### [Architecture](https://github.com/prometheus/prometheus#architecture-overview)
 
-## storage
+### storage
 
 - can be default local storage or remote storage system like postgresql or influxdb

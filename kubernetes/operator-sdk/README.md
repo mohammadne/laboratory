@@ -8,16 +8,16 @@
 
 ```bash
 # scaffold base project
-operator-sdk init --domain=mohammadne.me --project-name=example-operator --repo=github.com/mohammadne/example-operator
+operator-sdk init --domain=mohammadne.me --project-name=caas-operator --repo=github.com/mohammadne/caas-operator
 
 # https://book.kubebuilder.io/migration/multi-group.html
 operator-sdk edit --multigroup=true
 
 # resource -> generates the api directory
 # controller -> generates the controller directory
-operator-sdk create api --group=cache --version=v1alpha1 --kind=Memcached --controller --resource
+operator-sdk create api --group=apps --version=v1alpha1 --kind=Executer --controller --resource
 
-operator-sdk create webhook --group cache --version v1alpha1 --kind Memcached --programmatic-validation
+operator-sdk create webhook --group apps --version v1alpha1 --kind Executer --programmatic-validation
 ```
 
 ### Development

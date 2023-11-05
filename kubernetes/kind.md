@@ -37,6 +37,20 @@ kubectl config use-context kind-cluster-1
 
 ## multi-node cluster
 
+the config file is:
+
+``` yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+  - role: worker
+  - role: worker
+  - role: worker
+networking:
+  kubeProxyMode: "ipvs"
+```
+
 ``` bash
 kind create cluster --config ./cluster.yaml
 ```

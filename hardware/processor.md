@@ -1,3 +1,3 @@
 # Processor
 
-- <https://serverfault.com/questions/132441/virtualized-cpu-cores-vs-threads>
+- <https://www.ionos.com/digitalguide/server/know-how/cpu-vs-vcpu/>

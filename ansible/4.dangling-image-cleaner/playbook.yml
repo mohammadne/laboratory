@@ -1,6 +1,0 @@
-- name: dangling-image-cleaner
-  hosts: webservers
-  become: yes
-  vars_files: vars/main.yml
-  tasks:
-  - import_tasks: tasks/main.yml

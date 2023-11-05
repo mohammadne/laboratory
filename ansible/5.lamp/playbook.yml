@@ -1,7 +1,0 @@
-- name: LAMP
-  hosts: webservers
-  become: yes
-  roles:
-    - apache2
-    - mysql
-    - php

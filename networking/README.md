@@ -8,6 +8,8 @@
 
 ## resources
 
+- A Cloud Guru's [Networking Fundamentals](https://acloudguru.com/course/networking-foundations)
+
 - [Computer Network Tutorial for Beginners](https://www.guru99.com/data-communication-computer-network-tutorial.html)
 
 - [iptables](https://gist.github.com/nerdalert/a1687ae4da1cc44a437d)

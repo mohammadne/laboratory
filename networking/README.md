@@ -8,6 +8,8 @@
 
 ## resources
 
+- A Cloud Guru's [Linux Networking And Troubleshooting](https://acloudguru.com/course/linux-networking-and-troubleshooting)
+
 - A Cloud Guru's [Networking Fundamentals](https://acloudguru.com/course/networking-foundations)
 
 - [Computer Network Tutorial for Beginners](https://www.guru99.com/data-communication-computer-network-tutorial.html)

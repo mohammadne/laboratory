@@ -1,0 +1,21 @@
+services:
+  kafka-controller:
+    image: confluentinc/cp-kafka:latest
+    container_name: kafka-controller
+    restart: always
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: controller,broker
+      KAFKA_LISTENERS: PLAINTEXT://kafka-controller:9092,CONTROLLER://kafka-controller:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@kafka-controller:9093"
+      KAFKA_LOG_DIRS: "/var/lib/kafka/data"
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+
+volumes:
+  kafka_data:

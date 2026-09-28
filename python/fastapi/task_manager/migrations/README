@@ -1,0 +1,8 @@
+Alembic database migrations for the Task Manager API.
+
+Create a migration after changing SQLAlchemy models with:
+
+    uv run alembic revision --autogenerate -m "describe the change"
+
+Review generated migrations before applying them.
+

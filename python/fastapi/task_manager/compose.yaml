@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: task_manager
+      POSTGRES_USER: task_manager
+      POSTGRES_PASSWORD: task_manager
+    ports:
+      - "5432:5432"
+    volumes:
+      - task_manager_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U task_manager -d task_manager"]
+      interval: 2s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  task_manager_postgres_data:

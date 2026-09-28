@@ -1,0 +1,2 @@
+"""Task Manager application package."""
+

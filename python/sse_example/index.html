@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8">
+  <title>Python SSE demo</title>
+  <body>
+    <h1>Server-Sent Events</h1>
+    <p>The server sends one message per second:</p>
+    <pre id="output">Connecting…</pre>
+
+    <script>
+      const output = document.querySelector('#output');
+      const events = new EventSource('/events');
+
+      events.onmessage = ({ data }) => {
+        output.textContent += `\n${data}`;
+      };
+
+      events.onerror = () => {
+        output.textContent += '\nConnection closed (the browser will retry automatically).';
+      };
+    </script>
+  </body>
+</html>

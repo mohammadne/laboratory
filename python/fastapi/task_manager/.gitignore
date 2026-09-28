@@ -1,0 +1,17 @@
+# Local virtual environments
+.venv/
+
+# Python bytecode and tool caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Python packaging output
+*.egg-info/
+build/
+dist/
+
+# Local environment variables (commit an example file, not secrets)
+.env
